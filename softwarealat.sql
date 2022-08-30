@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2022 at 04:00 AM
+-- Generation Time: Aug 30, 2022 at 09:11 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -28,25 +28,29 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `departemen` (
+  `id_departemen` int(11) NOT NULL,
   `kode_departemen` varchar(10) NOT NULL,
   `nama_departemen` varchar(100) NOT NULL,
   `kode_divisi` varchar(10) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `departemen`
 --
 
-INSERT INTO `departemen` (`kode_departemen`, `nama_departemen`, `kode_divisi`, `created_at`, `updated_at`) VALUES
-('0000', 'Admin aplikasi', '3400', '2022-07-17 06:53:35', '2022-07-18 12:35:14'),
-('4378', 'Departemen Tiga', '3200', '2022-07-28 00:57:54', '2022-07-28 00:57:54'),
-('4539', 'Departemen Empat', '6100', '2022-07-28 01:01:33', '2022-07-28 01:01:33'),
-('5210', 'Test Departemen', '5100', '2022-07-28 00:42:34', '2022-07-28 00:42:34'),
-('5220', 'Bagian Produksi Vaksin Campak  ', '5200', '2022-07-17 06:53:35', '2022-07-18 12:32:02'),
-('5320', 'Bagian Produksi Vaksin Tetanus   ', '5300', '2022-07-17 07:10:04', '2022-07-18 12:34:01'),
-('7540', 'Departemen Satu', '6100', '2022-07-28 00:46:40', '2022-07-28 00:46:40');
+INSERT INTO `departemen` (`id_departemen`, `kode_departemen`, `nama_departemen`, `kode_divisi`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(1, '1111', 'realme 5', '4300', '2022-07-28 07:49:19', '2022-08-01 03:01:07', 0, 0),
+(8, '9830', 'samsung a10', '3200', '2022-08-01 01:12:42', '2022-08-02 01:25:43', 0, 0),
+(12, '9898', 'iphone 13 mini', '7100', '2022-08-01 02:57:30', '2022-08-01 02:58:12', 0, 0),
+(13, '4355', 'xiaomi redmi note 5', '6200', '2022-08-01 02:59:10', '2022-08-02 01:25:52', 0, 0),
+(14, '5434', 'iphone 12', '7400', '2022-08-01 03:00:41', '2022-08-02 01:26:18', 0, 0),
+(15, '4235', 'nama departemen', '5400', '2022-08-01 03:12:33', '2022-08-02 01:26:02', 0, 0),
+(17, '7564', 'campak', '6400', '2022-08-01 04:43:53', '2022-08-01 04:43:53', 0, 0),
+(21, '6587', 'le mineral', '6200', '2022-08-02 01:28:10', '2022-08-02 01:28:10', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -58,21 +62,23 @@ CREATE TABLE `direktorat` (
   `kode_direktorat` varchar(10) NOT NULL,
   `nama_direktorat` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `direktorat`
 --
 
-INSERT INTO `direktorat` (`kode_direktorat`, `nama_direktorat`, `created_at`, `updated_at`) VALUES
-('1000', 'Direktorat Utama', '2022-07-17 14:39:24', '2022-07-17 14:57:41'),
-('2000', 'SEVP Legal and Compliance', '2022-07-17 14:39:24', '2022-07-17 14:39:24'),
-('3000', 'Direktorat Keuangan &amp; Mitra Bisnis', '2022-07-17 14:44:49', '0000-00-00 00:00:00'),
-('4000', 'Direktorat Operasi', '2022-07-17 14:45:18', '0000-00-00 00:00:00'),
-('5000', 'SEVP Produksi', '2022-07-17 14:45:34', '0000-00-00 00:00:00'),
-('6000', 'Direktorat Pemasaran, Penelitian &amp; Pengembangan I', '2022-07-17 14:45:52', '0000-00-00 00:00:00'),
-('7000', 'SEVP Litbang', '2022-07-17 14:46:07', '0000-00-00 00:00:00');
+INSERT INTO `direktorat` (`kode_direktorat`, `nama_direktorat`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+('1000', 'Direktorat Utama', '2022-07-17 14:39:24', '2022-07-17 14:57:41', 0, 0),
+('2000', 'SEVP Legal and Compliance', '2022-07-17 14:39:24', '2022-07-17 14:39:24', 0, 0),
+('3000', 'Direktorat Keuangan &amp; Mitra Bisnis', '2022-07-17 14:44:49', '0000-00-00 00:00:00', 0, 0),
+('4000', 'Direktorat Operasi', '2022-07-17 14:45:18', '0000-00-00 00:00:00', 0, 0),
+('5000', 'SEVP Produksi', '2022-07-17 14:45:34', '0000-00-00 00:00:00', 0, 0),
+('6000', 'Direktorat Pemasaran, Penelitian &amp; Pengembangan I', '2022-07-17 14:45:52', '0000-00-00 00:00:00', 0, 0),
+('7000', 'SEVP Litbang', '2022-07-17 14:46:07', '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -81,43 +87,98 @@ INSERT INTO `direktorat` (`kode_direktorat`, `nama_direktorat`, `created_at`, `u
 --
 
 CREATE TABLE `divisi` (
+  `id_divisi` int(11) NOT NULL,
   `kode_divisi` varchar(10) NOT NULL,
   `nama_divisi` varchar(100) NOT NULL,
   `kode_direktorat` varchar(10) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `divisi`
 --
 
-INSERT INTO `divisi` (`kode_divisi`, `nama_divisi`, `kode_direktorat`, `created_at`, `updated_at`) VALUES
-('1300	', 'Divisi Perencanaan & Strategi Bisnis', '1000', '2022-07-17 15:05:24', '2022-07-17 15:05:24'),
-('2100	', 'Divisi Sumber Daya Manusia', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24'),
-('2200	', 'Divisi Hukum', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24'),
-('2300	', 'Divisi Pengelolaan Lingkungan & Sosial', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24'),
-('2400	', 'Divisi Kepatuhan & Manajemen Risiko', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24'),
-('3100', 'Divisi Anggaran &amp; Akuntansi', '3000', '2022-07-18 12:15:21', '0000-00-00 00:00:00'),
-('3200', 'Divisi Tresuri &amp; Pajak', '3000', '2022-07-18 12:15:50', '0000-00-00 00:00:00'),
-('3300', 'Divisi Pengadaan', '3000', '2022-07-18 12:16:12', '0000-00-00 00:00:00'),
-('3400', 'Divisi Teknologi Informasi', '3000', '2022-07-18 12:16:44', '0000-00-00 00:00:00'),
-('4100', 'Divisi Penjamin Mutu &amp; Regulasi', '4000', '2022-07-18 12:17:38', '0000-00-00 00:00:00'),
-('4200', 'Divisi Manajemen Proyek', '4000', '2022-07-18 12:18:37', '0000-00-00 00:00:00'),
-('4300', 'Divisi Teknik &amp; Pemeliharaan', '4000', '2022-07-18 12:19:21', '0000-00-00 00:00:00'),
-('4400', 'Divisi Manajemen Aset &amp; Umum', '4000', '2022-07-18 12:19:59', '0000-00-00 00:00:00'),
-('5100', 'Divisi Manajemen Produksi &amp; Persediaan', '5000', '2022-07-18 12:20:38', '0000-00-00 00:00:00'),
-('5200', 'Divisi Produksi Vaksin Virus', '5000', '2022-07-18 12:21:12', '0000-00-00 00:00:00'),
-('5300', 'Divisi Produksi Vaksin Bakteri', '5000', '2022-07-18 12:21:34', '0000-00-00 00:00:00'),
-('5400', 'Divisi Produksi Farmasi', '5000', '2022-07-18 12:22:32', '0000-00-00 00:00:00'),
-('6100', 'Divisi Pemasaran &amp; Penjualan Domestik', '6000', '2022-07-18 12:22:56', '0000-00-00 00:00:00'),
-('6200', 'Divisi Pemasaran &amp; Penjualan Internasional', '6000', '2022-07-18 12:23:21', '0000-00-00 00:00:00'),
-('6300', 'Divisi Komunikasi Pemasaran &amp; Distribusi', '6000', '2022-07-18 12:24:05', '0000-00-00 00:00:00'),
-('6400', 'Divisi Unit Klinik &amp; Imunisasi', '6000', '2022-07-18 12:24:31', '0000-00-00 00:00:00'),
-('7100', 'Divisi Pengawasan Mutu', '', '2022-07-18 12:25:23', '0000-00-00 00:00:00'),
-('7200', 'Divisi Hewan Laboratorium', '7000', '2022-07-18 12:25:48', '0000-00-00 00:00:00'),
-('7400', 'Peneliti', '7000', '2022-07-18 12:26:17', '0000-00-00 00:00:00'),
-('7500', 'Satuan Pengawasan Intern', '7000', '2022-07-18 12:25:01', '0000-00-00 00:00:00');
+INSERT INTO `divisi` (`id_divisi`, `kode_divisi`, `nama_divisi`, `kode_direktorat`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(1, '1300	', 'Divisi Perencanaan & Strategi Bisnis', '1000', '2022-07-17 15:05:24', '2022-07-17 15:05:24', 0, 0),
+(2, '2100	', 'Divisi Sumber Daya Manusia', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24', 0, 0),
+(3, '2200	', 'Divisi Hukum', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24', 0, 0),
+(4, '2300	', 'Divisi Pengelolaan Lingkungan & Sosial', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24', 0, 0),
+(5, '2400	', 'Divisi Kepatuhan & Manajemen Risiko', '2000', '2022-07-17 15:05:24', '2022-07-17 15:05:24', 0, 0),
+(6, '3100', 'Divisi Anggaran &amp; Akuntansi', '3000', '2022-07-18 12:15:21', '0000-00-00 00:00:00', 0, 0),
+(7, '3200', 'Divisi Tresuri &amp; Pajak', '3000', '2022-07-18 12:15:50', '0000-00-00 00:00:00', 0, 0),
+(8, '3300', 'Divisi Pengadaan', '3000', '2022-07-18 12:16:12', '0000-00-00 00:00:00', 0, 0),
+(9, '3400', 'Divisi Teknologi Informasi', '3000', '2022-07-18 12:16:44', '0000-00-00 00:00:00', 0, 0),
+(10, '4100', 'Divisi Penjamin Mutu &amp; Regulasi', '4000', '2022-07-18 12:17:38', '0000-00-00 00:00:00', 0, 0),
+(11, '4200', 'Divisi Manajemen Proyek', '4000', '2022-07-18 12:18:37', '0000-00-00 00:00:00', 0, 0),
+(12, '4300', 'Divisi Teknik &amp; Pemeliharaan', '4000', '2022-07-18 12:19:21', '0000-00-00 00:00:00', 0, 0),
+(13, '4400', 'Divisi Manajemen Aset &amp; Umum', '4000', '2022-07-18 12:19:59', '0000-00-00 00:00:00', 0, 0),
+(14, '5100', 'Divisi Manajemen Produksi &amp; Persediaan', '5000', '2022-07-18 12:20:38', '0000-00-00 00:00:00', 0, 0),
+(15, '5200', 'Divisi Produksi Vaksin Virus', '5000', '2022-07-18 12:21:12', '0000-00-00 00:00:00', 0, 0),
+(16, '5300', 'Divisi Produksi Vaksin Bakteri', '5000', '2022-07-18 12:21:34', '0000-00-00 00:00:00', 0, 0),
+(17, '5400', 'Divisi Produksi Farmasi', '5000', '2022-07-18 12:22:32', '0000-00-00 00:00:00', 0, 0),
+(18, '6100', 'Divisi Pemasaran &amp; Penjualan Domestik', '6000', '2022-07-18 12:22:56', '0000-00-00 00:00:00', 0, 0),
+(19, '6200', 'Divisi Pemasaran &amp; Penjualan Internasional', '6000', '2022-07-18 12:23:21', '0000-00-00 00:00:00', 0, 0),
+(20, '6300', 'Divisi Komunikasi Pemasaran &amp; Distribusi', '6000', '2022-07-18 12:24:05', '0000-00-00 00:00:00', 0, 0),
+(21, '6400', 'Divisi Unit Klinik &amp; Imunisasi', '6000', '2022-07-18 12:24:31', '0000-00-00 00:00:00', 0, 0),
+(22, '7100', 'Divisi Pengawasan Mutu', '', '2022-07-18 12:25:23', '0000-00-00 00:00:00', 0, 0),
+(23, '7200', 'Divisi Hewan Laboratorium', '7000', '2022-07-18 12:25:48', '0000-00-00 00:00:00', 0, 0),
+(24, '7400', 'Peneliti', '7000', '2022-07-18 12:26:17', '0000-00-00 00:00:00', 0, 0),
+(25, '7500', 'Satuan Pengawasan Intern', '7000', '2022-07-18 12:25:01', '0000-00-00 00:00:00', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `equipment`
+--
+
+CREATE TABLE `equipment` (
+  `id_equipment` int(11) NOT NULL,
+  `kode_equipment` varchar(30) NOT NULL,
+  `nama_equipment` varchar(100) NOT NULL,
+  `kode_software` varchar(50) NOT NULL,
+  `kode_departemen` varchar(10) NOT NULL,
+  `id_ruangan` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `equipment`
+--
+
+INSERT INTO `equipment` (`id_equipment`, `kode_equipment`, `nama_equipment`, `kode_software`, `kode_departemen`, `id_ruangan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(3, '204-TOC-02 ', 'TOC ', '116-Test-10', '4235', 3, '2022-08-24 02:03:57', '2022-08-24 03:55:29', 0, 0),
+(4, '204-ICP-01  ', 'Analisa Logam', '116-Test-10', '5434', 2, '2022-08-24 02:12:49', '2022-08-29 03:20:15', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gedung`
+--
+
+CREATE TABLE `gedung` (
+  `id_gedung` int(11) NOT NULL,
+  `no_gedung` int(11) NOT NULL,
+  `nama_gedung` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gedung`
+--
+
+INSERT INTO `gedung` (`id_gedung`, `no_gedung`, `nama_gedung`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(1, 36, 'Gedung ', '2022-08-22 00:54:37', '2022-08-24 02:19:36', 0, 0),
+(2, 67, 'Gedung5', '2022-08-22 01:00:55', '2022-08-24 02:19:50', 0, 0),
+(4, 14, 'Gedung3', '2022-08-22 06:38:13', '2022-08-22 06:38:13', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -129,14 +190,25 @@ CREATE TABLE `kontak` (
   `kode_kontak` int(11) NOT NULL,
   `nama_kontak` varchar(100) NOT NULL,
   `alamat` varchar(200) NOT NULL,
-  `kota` varchar(30) NOT NULL,
+  `kota` varchar(100) NOT NULL,
   `telepon` varchar(30) NOT NULL,
   `hp` varchar(10) NOT NULL,
   `catatan` tinytext DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kontak`
+--
+
+INSERT INTO `kontak` (`kode_kontak`, `nama_kontak`, `alamat`, `kota`, `telepon`, `hp`, `catatan`, `created_at`, `updated_at`, `email`, `user_update`, `user_edit`) VALUES
+(1, 'Kontak1', 'Alamat1', 'Bandung', '1234', '12345678', 'ABCD', '2022-08-23 00:36:06', '2022-08-23 00:36:06', 'kontak1@gmail.com', 0, 0),
+(3, 'Kontak2 ', 'Alamat2', 'Semarang', '2345', '23456789', 'EFGH', '2022-08-23 01:20:11', '2022-08-23 01:20:11', 'kontak2@gmail.com', 0, 0),
+(4, 'Kontak3 ', 'Alamat3', 'Bontang', '3456', '34567890', 'IJKL', '2022-08-29 00:38:14', '2022-08-29 00:38:45', 'email@email.com ', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -145,13 +217,101 @@ CREATE TABLE `kontak` (
 --
 
 CREATE TABLE `kota` (
-  `kota` varchar(10) NOT NULL,
+  `id_kota` int(11) NOT NULL,
+  `kota` varchar(100) NOT NULL,
   `propinsi` varchar(100) NOT NULL,
   `negara` varchar(200) NOT NULL,
   `kode_pos` varchar(30) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kota`
+--
+
+INSERT INTO `kota` (`id_kota`, `kota`, `propinsi`, `negara`, `kode_pos`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(1, 'Bandung', 'Jawa Barat', 'Indonesia', '40111', '2022-08-18 04:39:22', '2022-08-18 04:39:22', 0, 0),
+(3, 'Semarang ', 'Jawa Tengah ', 'Indonesia ', '50275 ', '2022-08-22 07:22:11', '2022-08-22 07:24:58', 0, 0),
+(4, 'Bontang  ', 'Kalimantan timur ', 'Indonesia ', '75324', '2022-08-22 07:32:01', '2022-08-24 02:20:49', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_detail`
+--
+
+CREATE TABLE `laporan_detail` (
+  `id_trasanksi` int(30) NOT NULL,
+  `no_laporan` varchar(30) NOT NULL,
+  `kode_equipment` varchar(30) NOT NULL,
+  `kode_software` varchar(50) NOT NULL,
+  `kode_supplier` int(11) NOT NULL,
+  `kode_vendor` int(11) NOT NULL,
+  `val_plan` tinyint(1) NOT NULL,
+  `urs_number` varchar(50) NOT NULL,
+  `urs` tinyint(1) NOT NULL,
+  `protokol_number` varchar(50) NOT NULL,
+  `protokol` tinyint(1) NOT NULL,
+  `iq` tinyint(1) NOT NULL,
+  `oq` tinyint(1) NOT NULL,
+  `pq` tinyint(1) NOT NULL,
+  `iq_number` varchar(50) NOT NULL,
+  `oq_number` varchar(50) NOT NULL,
+  `val_report` tinyint(1) NOT NULL,
+  `change_kontrol` tinyint(1) NOT NULL,
+  `sop` tinyint(1) NOT NULL,
+  `tda21_cprpart11_comly` tinyint(1) NOT NULL,
+  `keterangan` varchar(350) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_edit` int(11) NOT NULL,
+  `user_update` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_master`
+--
+
+CREATE TABLE `laporan_master` (
+  `no_laporan` varchar(30) NOT NULL,
+  `tanggal_laporan` datetime NOT NULL,
+  `kode_departemen` varchar(10) NOT NULL,
+  `id_personel` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_edit` int(11) NOT NULL,
+  `user_update` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personel`
+--
+
+CREATE TABLE `personel` (
+  `id_personel` int(11) NOT NULL,
+  `nik` int(20) NOT NULL,
+  `nama_personel` varchar(250) NOT NULL,
+  `kode_departemen` varchar(10) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_edit` int(11) NOT NULL,
+  `user_update` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `personel`
+--
+
+INSERT INTO `personel` (`id_personel`, `nik`, `nama_personel`, `kode_departemen`, `created_at`, `updated_at`, `user_edit`, `user_update`) VALUES
+(1, 124458, 'Personel1', '4235', '2022-08-23 07:00:14', '2022-08-23 07:11:23', 0, 0),
+(3, 143569, 'Personel2', '7564', '2022-08-23 07:13:55', '2022-08-23 07:13:55', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -161,14 +321,50 @@ CREATE TABLE `kota` (
 
 CREATE TABLE `ruangan` (
   `id_ruangan` int(11) NOT NULL,
-  `no_ruangan` varchar(50) NOT NULL,
+  `no_ruangan` int(11) NOT NULL,
   `nama_ruangan` varchar(200) NOT NULL,
-  `no_gedung` varchar(10) NOT NULL,
+  `no_gedung` int(11) NOT NULL,
   `no_lantai` varchar(10) NOT NULL,
   `catatan` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ruangan`
+--
+
+INSERT INTO `ruangan` (`id_ruangan`, `no_ruangan`, `nama_ruangan`, `no_gedung`, `no_lantai`, `catatan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(2, 1, 'Ruangan1', 67, '1', 'ABCD', '2022-08-23 02:33:59', '2022-08-23 02:33:59', 0, 0),
+(3, 5, 'Ruangan5', 14, '5', 'EFGH 1', '2022-08-23 02:57:35', '2022-08-23 06:42:47', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `software`
+--
+
+CREATE TABLE `software` (
+  `id_software` int(11) NOT NULL,
+  `kode_software` varchar(50) NOT NULL,
+  `nama_software` varchar(50) NOT NULL,
+  `kode_vendor` varchar(50) NOT NULL,
+  `jenis_software` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `software`
+--
+
+INSERT INTO `software` (`id_software`, `kode_software`, `nama_software`, `kode_vendor`, `jenis_software`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(2, '116-Test-10', 'Test software', '1', 'PLC', '2022-08-19 03:06:44', '2022-08-19 03:06:44', 0, 0),
+(3, '116-Test-07', 'Mitsubishi Programmable Controller', '1', 'PLC', '2022-08-24 02:23:08', '2022-08-24 02:23:08', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -180,13 +376,23 @@ CREATE TABLE `supplier` (
   `kode_supplier` int(11) NOT NULL,
   `nama_supplier` varchar(100) NOT NULL,
   `alamat` varchar(200) NOT NULL,
-  `kota` varchar(30) NOT NULL,
+  `kota` varchar(100) NOT NULL,
   `telepon` varchar(30) NOT NULL,
-  `kode_kontak` varchar(10) NOT NULL,
+  `kode_kontak` int(11) NOT NULL,
   `catatan` tinytext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`kode_supplier`, `nama_supplier`, `alamat`, `kota`, `telepon`, `kode_kontak`, `catatan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(1, 'Supplier1', 'Alamat1', 'Bandung', '12345', 1, 'Catatan1', '2022-08-25 01:05:33', '2022-08-25 01:05:33', 0, 0),
+(2, 'Supplier2 ', 'Alamat2', 'Semarang', '345345 ', 1, 'Catatan ', '2022-08-26 08:17:23', '2022-08-26 08:21:45', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -202,7 +408,7 @@ CREATE TABLE `user` (
   `keterangan_user` text NOT NULL,
   `level_user` enum('Super Admin','Admin User','Operator') NOT NULL,
   `kode_departemen` varchar(10) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -215,7 +421,10 @@ INSERT INTO `user` (`id_user`, `nama_user`, `username_user`, `password_user`, `k
 (8, 'Amin B. Kanda', 'Amin', 'fae38bd94701cdf2a9d114425cb40292', 'pass: ayu123', 'Admin User', '000', '2022-07-25 08:20:10', '2022-07-25 08:20:10'),
 (9, 'Hilman Pebrian', 'hilman ', '202cb962ac59075b964b07152d234b70', 'pass: 123', 'Super Admin', '115', '2022-07-25 08:20:03', '2022-07-25 08:20:03'),
 (10, 'Fitri Adini', 'fitri', '202cb962ac59075b964b07152d234b70', 'pas 123', 'Operator', '114', '2022-07-17 05:53:19', '2022-07-17 05:53:19'),
-(13, 'Amin1', 'Amin1', '202cb962ac59075b964b07152d234b70', '123', 'Admin User', '237', '2022-07-25 08:20:27', '2022-07-25 08:20:27');
+(13, 'Amin1', 'Amin1', '202cb962ac59075b964b07152d234b70', '123', 'Admin User', '237', '2022-07-25 08:20:27', '2022-07-25 08:20:27'),
+(15, 'Abigail', 'bigeyl', '81dc9bdb52d04dc20036dbd8313ed055', 'pass', 'Super Admin', '5434', '2022-08-11 00:44:07', '2022-08-15 00:27:12'),
+(17, 'San Jaegar', 'jaexxy', '202cb962ac59075b964b07152d234b70', 'sfdfsdffdgg', 'Super Admin', '9898', '2022-08-11 00:47:51', '2022-08-15 00:27:33'),
+(18, 'bnmio', 'umnbyug', '7363a0d0604902af7b70b271a0b96480', 'pass', 'Super Admin', '4235', '2022-08-11 00:45:05', '2022-08-11 00:50:42');
 
 -- --------------------------------------------------------
 
@@ -229,13 +438,25 @@ CREATE TABLE `vendor` (
   `alamat` varchar(200) NOT NULL,
   `kota` varchar(30) NOT NULL,
   `telepon` varchar(30) NOT NULL,
-  `kode_kontak` varchar(10) NOT NULL,
+  `kode_kontak` int(11) NOT NULL,
   `catatan` tinytext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `email` varchar(50) NOT NULL,
-  `web` varchar(100) NOT NULL
+  `web` varchar(100) NOT NULL,
+  `user_update` int(11) NOT NULL,
+  `user_edit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vendor`
+--
+
+INSERT INTO `vendor` (`kode_vendor`, `nama_vendor`, `alamat`, `kota`, `telepon`, `kode_kontak`, `catatan`, `created_at`, `updated_at`, `email`, `web`, `user_update`, `user_edit`) VALUES
+(1, 'Sakura', 'Alamat', 'Kota1', '345345', 0, 'Catatan1', '2022-08-18 03:42:51', '2022-08-26 01:02:07', 'email@email.com', 'www.web.com', 0, 0),
+(2, 'FAC', 'Alamat2', 'Kota', '678678', 0, 'Catatan2', '2022-08-18 03:42:51', '2022-08-26 01:02:07', 'email@email.com', 'www.web.com', 0, 0),
+(3, 'Vendor3', 'Alamat ', 'Kota ', '2345 ', 3, 'Catatan ', '2022-08-26 01:22:24', '2022-08-26 01:30:18', 'email@email.com ', 'www.web.com ', 0, 0),
+(4, 'Vendor4 ', 'Alamat4', 'Kota4', '890890', 1, 'Catatan4', '2022-08-26 01:30:48', '2022-08-26 01:31:02', 'email@email.com ', 'www.web.com', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -245,7 +466,7 @@ CREATE TABLE `vendor` (
 -- Indexes for table `departemen`
 --
 ALTER TABLE `departemen`
-  ADD PRIMARY KEY (`kode_departemen`);
+  ADD PRIMARY KEY (`id_departemen`);
 
 --
 -- Indexes for table `direktorat`
@@ -257,7 +478,19 @@ ALTER TABLE `direktorat`
 -- Indexes for table `divisi`
 --
 ALTER TABLE `divisi`
-  ADD PRIMARY KEY (`kode_divisi`);
+  ADD PRIMARY KEY (`id_divisi`);
+
+--
+-- Indexes for table `equipment`
+--
+ALTER TABLE `equipment`
+  ADD PRIMARY KEY (`id_equipment`);
+
+--
+-- Indexes for table `gedung`
+--
+ALTER TABLE `gedung`
+  ADD PRIMARY KEY (`id_gedung`);
 
 --
 -- Indexes for table `kontak`
@@ -269,13 +502,37 @@ ALTER TABLE `kontak`
 -- Indexes for table `kota`
 --
 ALTER TABLE `kota`
-  ADD PRIMARY KEY (`kota`);
+  ADD PRIMARY KEY (`id_kota`);
+
+--
+-- Indexes for table `laporan_detail`
+--
+ALTER TABLE `laporan_detail`
+  ADD PRIMARY KEY (`id_trasanksi`,`no_laporan`);
+
+--
+-- Indexes for table `laporan_master`
+--
+ALTER TABLE `laporan_master`
+  ADD PRIMARY KEY (`no_laporan`);
+
+--
+-- Indexes for table `personel`
+--
+ALTER TABLE `personel`
+  ADD PRIMARY KEY (`id_personel`);
 
 --
 -- Indexes for table `ruangan`
 --
 ALTER TABLE `ruangan`
   ADD PRIMARY KEY (`id_ruangan`);
+
+--
+-- Indexes for table `software`
+--
+ALTER TABLE `software`
+  ADD PRIMARY KEY (`id_software`);
 
 --
 -- Indexes for table `supplier`
@@ -300,34 +557,76 @@ ALTER TABLE `vendor`
 --
 
 --
+-- AUTO_INCREMENT for table `departemen`
+--
+ALTER TABLE `departemen`
+  MODIFY `id_departemen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `divisi`
+--
+ALTER TABLE `divisi`
+  MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `equipment`
+--
+ALTER TABLE `equipment`
+  MODIFY `id_equipment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `gedung`
+--
+ALTER TABLE `gedung`
+  MODIFY `id_gedung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
-  MODIFY `kode_kontak` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_kontak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `kota`
+--
+ALTER TABLE `kota`
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `personel`
+--
+ALTER TABLE `personel`
+  MODIFY `id_personel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ruangan`
 --
 ALTER TABLE `ruangan`
-  MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `software`
+--
+ALTER TABLE `software`
+  MODIFY `id_software` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `kode_supplier` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `kode_vendor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
