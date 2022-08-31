@@ -55,7 +55,7 @@
                                         <li>
                                         <!-- <a href="departemen/delete.php?kode_departemen=<?php echo $user['kode_departemen'] ?>" onclick="return confirm('Yakin hapus data ini?')">
                                         <i class="nav-icon  fas  fa-remove"></i> Hapus</a> -->
-                                        <a href="#" onClick="confirm_modal('divisi/delete.php?&kode_divisi=<?php echo  $user['kode_divisi'] ?>');">
+                                        <a href="#" onClick="confirm_modal('divisi/delete_divisi.php?&kode_divisi=<?php echo  $user['kode_divisi'] ?>');">
                                               <i class="nav-icon  fas  fa-remove"></i> Hapus
                                             </a>
                                         </li>
@@ -168,7 +168,7 @@
             <h4 class="modal-title"></i>Anda yakin akan menghapus data ini.. ?</h4>
             </div>
                 <div class="modal-footer">
-                    <a href="../divisi/hapus_divisi.php?&kode_divisi=<?php echo  $user['kode_divisi'] ?>">
+                    <a href="divisi/delete_divisi.php?&kode_divisi=<?php echo  $user['kode_divisi'] ?>">
                     <a href="#" class="btn btn-danger " id="delete_link"><i class="nav-icon fas   fa-times-circle"></i>Hapus</a>
                     <button type="button" class="btn btn-info" data-dismiss="modal"><i class="nav-icon fas   fa-times-circle"></i>Batal</button>
                     
