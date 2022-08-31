@@ -156,10 +156,10 @@
                 <h1 class="modal-title"><i class="nav-icon fas   fa-times-circle"></i>Perhatian!!</h1>
             </div>
             <div class="modal-body">
-            <h4 class="modal-title"></i>Anda yakin akan menghapus data ini.. ?</h4>
+            <h4 class="modal-title">Anda yakin akan menghapus data ini.. ?</h4>
             </div>
                 <div class="modal-footer">
-                    <a href="../direktorat/hapus_direktorat.php?&kode_direktorat=<?php echo  $user['kode_direktorat'] ?>">
+                    <a href="direktorat/delete_direktorat.php?&kode_direktorat=<?php echo  $user['kode_direktorat'] ?>">
                     <a href="#" class="btn btn-danger " id="delete_link"><i class="nav-icon fas   fa-times-circle"></i>Hapus</a>
                     <button type="button" class="btn btn-info" data-dismiss="modal"><i class="nav-icon fas   fa-times-circle"></i>Batal</button>
                     

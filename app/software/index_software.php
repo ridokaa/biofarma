@@ -60,9 +60,12 @@
 
                                                     <li class="divider"></li>
                                                     <li>
-                                                    <a href="software/delete_software.php?kode_software=<?php echo $user['kode_software'] ?>"onclick="return confirm('Yakin hapus data ini?')">
-                                                    <i class="nav-icon  fas  fa-remove"></i> Hapus</a>
+                                                    <!-- <a href="software/delete_software.php?kode_software=<?php echo $user['kode_software'] ?>"onclick="return confirm('Yakin hapus data ini?')">
+                                                    <i class="nav-icon  fas  fa-remove"></i> Hapus</a> -->
                                                     </li>
+                                                    <a href="#" onClick="confirm_modal('software/delete_software.php?&kode_software=<?php echo  $user['kode_software'] ?>');">
+                                                        <i class="nav-icon  fas  fa-remove"></i> Hapus
+                                                    </a>
 
                                                 </ul>
                                         </div>
@@ -153,6 +156,34 @@
         <!-- /.modal-fade -->
 </div>
 
-
+   <!-- Popup modal Delete-->
+   <div class="modal fade" id="modal_delete">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-danger">
+                <h1 class="modal-title"><i class="nav-icon fas   fa-times-circle"></i>Perhatian!!</h1>
+            </div>
+            <div class="modal-body">
+            <h4 class="modal-title"><i class="nav-icon fas   fa-times-circle"></i>Anda yakin akan menghapus data ini.. ?</h4>
+            </div>
+                <div class="modal-footer">
+                    <a href="software/delete_software.php?&kode_software=<?php echo  $user['kode_software'] ?>">
+                    <a href="#" class="btn btn-danger " id="delete_link"><i class="nav-icon fas   fa-times-circle"></i>Hapus</a>
+                    <button type="button" class="btn btn-info" data-dismiss="modal"><i class="nav-icon fas   fa-times-circle"></i>Batal</button>
+                    
+                </div>
+            
+            </div>
+        </div>
+</div>
+                
+<!-- Javascript untuk popup modal Delete-->
+<script type="text/javascript">
+   function confirm_modal(delete_url)
+    {
+     $('#modal_delete').modal('show', {backdrop: 'static'});
+     document.getElementById('delete_link').setAttribute('href', delete_url);
+     }
+</script> 
   
      
