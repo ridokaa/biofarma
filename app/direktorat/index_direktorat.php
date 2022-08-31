@@ -45,7 +45,7 @@
 
                                         <li class="divider"></li>
                                         <li>
-                                        <a href="index.php?page=edit&& kode_departemen=<?php echo $user['kode_departemen']; ?>"> <i class="nav-icon fas fa-edit"></i> Ubah</a>
+                                        <a href="index.php?page=edit_direktorat&& kode_direktorat=<?php echo $user['kode_direktorat']; ?>"> <i class="nav-icon fas fa-edit"></i> Ubah</a>
                                         </li>
 
                                         <li class="divider"></li>
@@ -159,7 +159,7 @@
             <h4 class="modal-title"></i>Anda yakin akan menghapus data ini.. ?</h4>
             </div>
                 <div class="modal-footer">
-                    <a href="direktorat/delete_direktorat.php?&kode_direktorat=<?php echo  $user['kode_direktorat'] ?>">
+                    <a href="../direktorat/hapus_direktorat.php?&kode_direktorat=<?php echo  $user['kode_direktorat'] ?>">
                     <a href="#" class="btn btn-danger " id="delete_link"><i class="nav-icon fas   fa-times-circle"></i>Hapus</a>
                     <button type="button" class="btn btn-info" data-dismiss="modal"><i class="nav-icon fas   fa-times-circle"></i>Batal</button>
                     

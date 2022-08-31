@@ -24,15 +24,13 @@
 
 
 // ambil data dari form
+$id_direktorat    = $_GET['id_direktorat'];
 $kode_direktorat  = $_GET['kode_direktorat'];
 $nama_direktorat  = $_GET['nama_direktorat'];
-$created_at       = $_GET['created_at'];
-$updated_at       = $_GET['updated_at'];
-
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database
-$query = "SELECT* FROM direktorat WHERE kode_direktorat='$kode_direktorat'";
+$query = "UPDATE direktorat SET kode_direktorat='$kode_direktorat',nama_direktorat='$nama_direktorat' WHERE id_direktorat='$id_direktorat'";
 
 $hasil = mysqli_query($koneksi, $query);
 

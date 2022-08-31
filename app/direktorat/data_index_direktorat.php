@@ -9,7 +9,7 @@
     $koneksi = mysqli_connect($host, $user, $pass, $database) or die("gagal koneksi ke database");
                                     
     // ambil dari database
-    $query = "SELECT kode_direktorat,nama_direktorat FROM direktorat ";
+    $query = "SELECT id_direktorat,kode_direktorat,nama_direktorat FROM direktorat ";
     $hasil = mysqli_query($koneksi, $query);
 
     $data_user = array();

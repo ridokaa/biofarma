@@ -77,7 +77,7 @@ include('header.php')?>;
       elseif($_GET['page']=='direktorat'){
         include('direktorat/index_direktorat.php');
       }
-      elseif($_GET['page']=='direktorat_edit'){
+      elseif($_GET['page']=='edit_direktorat'){
         include('direktorat/edit_direktorat.php');
       }
       elseif($_GET['page']=='direktorat_detail'){
