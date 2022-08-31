@@ -15,7 +15,7 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <div class="container-fluid">
-                                <form method='GET'action="laporan_master/tambah_data_laporan_master.php">
+                                <form method='GET'action="master/tambah_data_laporan_master.php">
                                     <div class="text-right">
                                         <button type="submit" class="btn btn-info">
                                             <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
@@ -122,7 +122,7 @@
                                     <div class="form-group row">
                                         <label for="tanggal_laporan" class="col-sm-2 col-form-label">Tanggal</label>
                                          <div class="col-sm-10">
-                                            <input type="date" >
+                                         <input type="date" class="form-control" id="tanggal_laporan" placeholder="no laporan" name="tanggal_laporan"required>
                                         </div>
                                     </div>
 

@@ -43,9 +43,9 @@ $hasil = mysqli_query($koneksi, $query);
 // cek keberhasilan pendambahan data
 if ($hasil == true) {
      echo "Penambahan data berhasil";
-    header('location:../index.php?page=laporan_master');
+    header('location:../index.php?page=master');
 } else {
     echo "Penambahan data gagal!". mysqli_connect_error($koneksi);
-    header('location:../index.php?page=laporan_master');
+    header('location:../index.php?page=master');
 }
 ?>
