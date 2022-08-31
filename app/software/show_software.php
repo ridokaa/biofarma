@@ -35,6 +35,12 @@ $view        = mysqli_fetch_assoc($query);
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="tahun" class="col-sm-2 col-form-label">Tahun</label>
+                            <div class="col-sm-10">
+                            <?php echo $view ['tahun'];?>
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="kode_vendor" class="col-sm-2 col-form-label">Vendor</label>
                             <div class="col-sm-10">
                                 <?php echo $view ['kode_vendor'];?>
