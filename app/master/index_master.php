@@ -19,10 +19,11 @@
                         <!-- <br></br> -->
                         <!-- /.card-header -->
                         <div class="card-body">
-                            
-                            <form method='GET'action="kontak/showbaru_kontak.php">
-                                <table class="table table-striped">
-                                    <tr>
+                            <div class="container-fluid">
+                                <form method='GET'action="kontak/showbaru_kontak.php">
+                                <div class="row">
+                                    <div class="col-6">
+                                        
                                     <div class="form-group row">
                                         <label for="no_laporan" class="col-sm-2 col-form-label">No Laporan</label>
                                         <div class="col-sm-10">
@@ -51,7 +52,8 @@
                                         <!-- <?php echo $user ['kode_departemen'];?> -->
                                         </div>
                                     </div>
-
+                                    </div>
+                                    <div class="col-6">
                                     <div class="form-group row">
                                         <label for="id_personel" class="col-sm-2 col-form-label">Personel</label>
                                         <div class="col-sm-10">
@@ -65,10 +67,16 @@
                                         <!-- <?php echo $user ['tanggal_laporan'];?> -->
                                         </div>
                                     </div>
+                                    </div>
+                                </div>
+                                    
 
-                                    </tr>
-                                </table>
+                                    
+
                             </form>
+                            </div>
+                            
+                            
                         </div>
             </div>
                        
