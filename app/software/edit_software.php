@@ -22,6 +22,12 @@ $view        = mysqli_fetch_array($query);
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="tahun" class="col-sm-2 col-form-label">Tahun</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="tahun" placeholder="tahun" name='tahun'value ="<?php echo $view ['tahun'];?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="kode_vendor" class="col-sm-2 col-form-label">Vendor</label>
                             <div class="col-sm-10">
                                 <select class="form-control selectpicker" name="kode_vendor" required>
