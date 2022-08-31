@@ -28,13 +28,14 @@ $id_software    = $_GET['id_software'];
 $kode_software  = $_GET['kode_software'];
 $nama_software  = $_GET['nama_software'];
 $kode_vendor    = $_GET['kode_vendor'];
-$jenis_software   = $_GET['jenis_software'];
+$jenis_software = $_GET['jenis_software'];
+$tahun          = $_GET['tahun'];
 
 
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database
-$query = "INSERT INTO software (id_software, kode_software, nama_software, kode_vendor, jenis_software)  VALUES ('$id_software', '$kode_software', '$nama_software', '$kode_vendor', '$jenis_software')";
+$query = "INSERT INTO software (id_software, kode_software, nama_software, kode_vendor, jenis_software, tahun)  VALUES ('$id_software', '$kode_software', '$nama_software', '$kode_vendor', '$jenis_software', '$tahun')";
 
 $hasil = mysqli_query($koneksi, $query);
 
