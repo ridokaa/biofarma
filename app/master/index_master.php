@@ -39,6 +39,20 @@
                                     </div>
 
                                     <div class="form-group row">
+                                        <label for="kode_departemen" class="col-sm-2 col-form-label">Divisi</label>
+                                        <div class="col-sm-10">
+                                        <!-- <?php echo $user ['kode_departemen'];?> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="kode_departemen" class="col-sm-2 col-form-label">Direktorat</label>
+                                        <div class="col-sm-10">
+                                        <!-- <?php echo $user ['kode_departemen'];?> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
                                         <label for="id_personel" class="col-sm-2 col-form-label">Personel</label>
                                         <div class="col-sm-10">
                                         <!-- <?php echo $view ['id_personel'];?> -->
@@ -74,6 +88,18 @@
                     <div class="card-header bg-info">
                                 <h1 class="card-title">Laporan Detail</h1>
                                 </div>
+                                <br></br>
+                            <div class="text-right">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg">
+                                    <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
+                                </button>
+                            </div>
+                             <div class="form-group row-right">
+                                        <label for="tanggal_laporan" class="col-sm-2 col-form-label">No Laporan</label>
+                                        <div class="col-sm-10">
+                                        <!-- <?php echo $user ['tanggal_laporan'];?> -->
+                                        </div>
+                            </div>
                                 <br></br>
                                     <thead >
                                         <tr class="bg-info">
