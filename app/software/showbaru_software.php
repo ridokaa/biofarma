@@ -27,10 +27,11 @@
 $id_software    = $_POST['id_software'];
 $kode_software  = $_POST['kode_software'];
 $nama_software  = $_POST['nama_software'];
+$tahun          = $_POST['tahun'];
 $kode_vendor    = $_POST['kode_vendor'];
-$jenis_software   = $_POST['jenis_software'];
-$created_at    = $_GET['created_at'];
-$updated_at    = $_GET['updated_at'];
+$jenis_software = $_POST['jenis_software'];
+$created_at     = $_GET['created_at'];
+$updated_at     = $_GET['updated_at'];
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database
