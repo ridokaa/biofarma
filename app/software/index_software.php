@@ -25,6 +25,7 @@
                             <th>#</th>
                             <th>ID Software</th>
                             <th>Nama Software</th>
+                            <th>Tahun</th>
                             <th>Vendor</th>
                             <th>Jenis Software</th>
                             <th>Aksi</th>
@@ -36,6 +37,7 @@
                                     <td><?php echo $Urut++ ?></td><!-- no urut -->
                                     <td><?php echo $user['kode_software'] ?></td>
                                     <td><?php echo $user['nama_software'] ?></td>
+                                    <td><?php echo $user['tahun'] ?></td>
                                     <td><?php echo $user['nama_vendor'] ?></td>
                                     <td><?php echo $user['jenis_software'] ?></td>
                                     <td>
@@ -101,6 +103,13 @@
                                 <label for="nama_software" class="col-sm-2 col-form-label">Nama Software</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="nama_software" placeholder="nama software" name="nama_software"required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="tahun" class="col-sm-2 col-form-label">Tahun</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="tahun" placeholder="tahun" name="tahun"required>
                                 </div>
                             </div>
 
