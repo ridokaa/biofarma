@@ -26,29 +26,29 @@
                                     <div class="form-group row">
                                         <label for="no_laporan" class="col-sm-2 col-form-label">No Laporan</label>
                                         <div class="col-sm-10">
-                                        <!-- <?php echo $user ['no_laporan'];?> -->
-                                        <?php var_dump($user);?>
+                                        <!-- <?php echo $user ['no_laporan'];?>
+                                        <?php var_dump($user);?> -->
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="kode_departemen" class="col-sm-2 col-form-label">Departemen</label>
                                         <div class="col-sm-10">
-                                        <?php echo $user ['kode_departemen'];?>
+                                        <!-- <?php echo $user ['kode_departemen'];?> -->
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="id_personel" class="col-sm-2 col-form-label">Personel</label>
                                         <div class="col-sm-10">
-                                        <?php echo $view ['id_personel'];?>
+                                        <!-- <?php echo $view ['id_personel'];?> -->
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="tanggal_laporan" class="col-sm-2 col-form-label">Tanggal</label>
                                         <div class="col-sm-10">
-                                        <?php echo $user ['tanggal_laporan'];?>
+                                        <!-- <?php echo $user ['tanggal_laporan'];?> -->
                                         </div>
                                     </div>
 
@@ -78,8 +78,22 @@
                                     <thead >
                                         <tr class="bg-info">
                                             <th>#</th>
-                                            <th>Kode Direktorat</th>
-                                            <th>Nama Direktorat</th>
+                                            <th>Nama Alat</th>
+                                            <th>ID Alat</th>
+                                            <th>Software</th>
+                                            <th>Supplier</th>
+                                            <th>Vendor</th>
+                                            <th>Val. Plan</th>
+                                            <th>URS</th>
+                                            <th>Protokol</th>
+                                            <th>IQ</th>
+                                            <th>OQ</th>
+                                            <th>PQ</th>
+                                            <th>Val. Report</th>
+                                            <th>Change Kontrol</th>
+                                            <th>SOP</th>
+                                            <th>FDA CFR Part 11 Comply</th>
+                                            <th>Keterangan</th>
                                             <th>Aksi</th>
                                         </tr>
 
@@ -87,9 +101,9 @@
                                             <?php foreach ($data_user as $user) : ?>
                                                 <tr>
                                                     <td><?php echo $Urut++ ?></td><!-- no urut -->
-                                                    <td><?php echo $user['kode_direktorat'] ?></td>
-                                                    <td><?php echo $user['nama_direktorat'] ?></td>
-                                                    <td>
+                                                    <!-- <td><?php echo $user['kode_direktorat'] ?></td>
+                                                    <td><?php echo $user['nama_direktorat'] ?></td> -->
+                                            
                                                         <!-- Single button -->
                                                         <div class="btn-group pull-right">
                                                         <button type="button" class="btn btn-info btn-xs dropdown-toggle "  data-toggle="dropdown" aria-expanded="true">
