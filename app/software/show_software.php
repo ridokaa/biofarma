@@ -77,7 +77,7 @@ $view        = mysqli_fetch_assoc($query);
                         
                         
                          <div class="modal-footer">
-                            <a href="index.php?page=departemen" class="btn btn-info">
+                            <a href="index.php?page=software" class="btn btn-info">
                                 <i class="nav-icon fas   fa-times-circle "></i>Tutup
                             </a>
                         </div>
