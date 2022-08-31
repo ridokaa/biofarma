@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2022 at 09:11 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Waktu pembuatan: 31 Agu 2022 pada 06.40
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `departemen`
+-- Struktur dari tabel `departemen`
 --
 
 CREATE TABLE `departemen` (
@@ -39,7 +39,7 @@ CREATE TABLE `departemen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `departemen`
+-- Dumping data untuk tabel `departemen`
 --
 
 INSERT INTO `departemen` (`id_departemen`, `kode_departemen`, `nama_departemen`, `kode_divisi`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
@@ -55,10 +55,11 @@ INSERT INTO `departemen` (`id_departemen`, `kode_departemen`, `nama_departemen`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `direktorat`
+-- Struktur dari tabel `direktorat`
 --
 
 CREATE TABLE `direktorat` (
+  `id_direktorat` int(11) NOT NULL,
   `kode_direktorat` varchar(10) NOT NULL,
   `nama_direktorat` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -68,22 +69,22 @@ CREATE TABLE `direktorat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `direktorat`
+-- Dumping data untuk tabel `direktorat`
 --
 
-INSERT INTO `direktorat` (`kode_direktorat`, `nama_direktorat`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
-('1000', 'Direktorat Utama', '2022-07-17 14:39:24', '2022-07-17 14:57:41', 0, 0),
-('2000', 'SEVP Legal and Compliance', '2022-07-17 14:39:24', '2022-07-17 14:39:24', 0, 0),
-('3000', 'Direktorat Keuangan &amp; Mitra Bisnis', '2022-07-17 14:44:49', '0000-00-00 00:00:00', 0, 0),
-('4000', 'Direktorat Operasi', '2022-07-17 14:45:18', '0000-00-00 00:00:00', 0, 0),
-('5000', 'SEVP Produksi', '2022-07-17 14:45:34', '0000-00-00 00:00:00', 0, 0),
-('6000', 'Direktorat Pemasaran, Penelitian &amp; Pengembangan I', '2022-07-17 14:45:52', '0000-00-00 00:00:00', 0, 0),
-('7000', 'SEVP Litbang', '2022-07-17 14:46:07', '0000-00-00 00:00:00', 0, 0);
+INSERT INTO `direktorat` (`id_direktorat`, `kode_direktorat`, `nama_direktorat`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(1, '1000', 'Direktorat Utama', '2022-07-17 14:39:24', '2022-07-17 14:57:41', 0, 0),
+(2, '2000', 'SEVP Legal and Compliance', '2022-07-17 14:39:24', '2022-07-17 14:39:24', 0, 0),
+(3, '3000', 'Direktorat Keuangan &amp; Mitra Bisnis', '2022-07-17 14:44:49', '0000-00-00 00:00:00', 0, 0),
+(4, '4000', 'Direktorat Operasi', '2022-07-17 14:45:18', '0000-00-00 00:00:00', 0, 0),
+(5, '5000', 'SEVP Produksi', '2022-07-17 14:45:34', '0000-00-00 00:00:00', 0, 0),
+(6, '6000', 'Direktorat Pemasaran, Penelitian &amp; Pengembangan I', '2022-07-17 14:45:52', '0000-00-00 00:00:00', 0, 0),
+(7, '7000', 'SEVP Litbang', '2022-07-17 14:46:07', '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `divisi`
+-- Struktur dari tabel `divisi`
 --
 
 CREATE TABLE `divisi` (
@@ -98,7 +99,7 @@ CREATE TABLE `divisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `divisi`
+-- Dumping data untuk tabel `divisi`
 --
 
 INSERT INTO `divisi` (`id_divisi`, `kode_divisi`, `nama_divisi`, `kode_direktorat`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
@@ -131,7 +132,7 @@ INSERT INTO `divisi` (`id_divisi`, `kode_divisi`, `nama_divisi`, `kode_direktora
 -- --------------------------------------------------------
 
 --
--- Table structure for table `equipment`
+-- Struktur dari tabel `equipment`
 --
 
 CREATE TABLE `equipment` (
@@ -148,7 +149,7 @@ CREATE TABLE `equipment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `equipment`
+-- Dumping data untuk tabel `equipment`
 --
 
 INSERT INTO `equipment` (`id_equipment`, `kode_equipment`, `nama_equipment`, `kode_software`, `kode_departemen`, `id_ruangan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
@@ -158,7 +159,7 @@ INSERT INTO `equipment` (`id_equipment`, `kode_equipment`, `nama_equipment`, `ko
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gedung`
+-- Struktur dari tabel `gedung`
 --
 
 CREATE TABLE `gedung` (
@@ -172,7 +173,7 @@ CREATE TABLE `gedung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `gedung`
+-- Dumping data untuk tabel `gedung`
 --
 
 INSERT INTO `gedung` (`id_gedung`, `no_gedung`, `nama_gedung`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
@@ -183,7 +184,7 @@ INSERT INTO `gedung` (`id_gedung`, `no_gedung`, `nama_gedung`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kontak`
+-- Struktur dari tabel `kontak`
 --
 
 CREATE TABLE `kontak` (
@@ -202,7 +203,7 @@ CREATE TABLE `kontak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kontak`
+-- Dumping data untuk tabel `kontak`
 --
 
 INSERT INTO `kontak` (`kode_kontak`, `nama_kontak`, `alamat`, `kota`, `telepon`, `hp`, `catatan`, `created_at`, `updated_at`, `email`, `user_update`, `user_edit`) VALUES
@@ -213,7 +214,7 @@ INSERT INTO `kontak` (`kode_kontak`, `nama_kontak`, `alamat`, `kota`, `telepon`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kota`
+-- Struktur dari tabel `kota`
 --
 
 CREATE TABLE `kota` (
@@ -229,7 +230,7 @@ CREATE TABLE `kota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kota`
+-- Dumping data untuk tabel `kota`
 --
 
 INSERT INTO `kota` (`id_kota`, `kota`, `propinsi`, `negara`, `kode_pos`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
@@ -240,7 +241,7 @@ INSERT INTO `kota` (`id_kota`, `kota`, `propinsi`, `negara`, `kode_pos`, `create
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laporan_detail`
+-- Struktur dari tabel `laporan_detail`
 --
 
 CREATE TABLE `laporan_detail` (
@@ -274,13 +275,15 @@ CREATE TABLE `laporan_detail` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laporan_master`
+-- Struktur dari tabel `laporan_master`
 --
 
 CREATE TABLE `laporan_master` (
   `no_laporan` varchar(30) NOT NULL,
   `tanggal_laporan` datetime NOT NULL,
   `kode_departemen` varchar(10) NOT NULL,
+  `kode_divisi` varchar(10) NOT NULL,
+  `kode_direktorat` varchar(10) NOT NULL,
   `id_personel` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -288,10 +291,19 @@ CREATE TABLE `laporan_master` (
   `user_update` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `laporan_master`
+--
+
+INSERT INTO `laporan_master` (`no_laporan`, `tanggal_laporan`, `kode_departemen`, `kode_divisi`, `kode_direktorat`, `id_personel`, `created_at`, `update_at`, `user_edit`, `user_update`) VALUES
+('1/115/II/2022', '0000-00-00 00:00:00', '1111', '2100', '3000', 3, '2022-08-31 04:16:04', '2022-08-31 04:16:04', 0, 0),
+('2313', '0000-00-00 00:00:00', '4355', '2300', '3000', 3, '2022-08-31 04:21:10', '2022-08-31 04:21:10', 0, 0),
+('3rsfe', '2022-08-11 00:00:00', '9898', '3200', '4000', 3, '2022-08-31 04:24:19', '2022-08-31 04:24:19', 0, 0);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personel`
+-- Struktur dari tabel `personel`
 --
 
 CREATE TABLE `personel` (
@@ -306,7 +318,7 @@ CREATE TABLE `personel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `personel`
+-- Dumping data untuk tabel `personel`
 --
 
 INSERT INTO `personel` (`id_personel`, `nik`, `nama_personel`, `kode_departemen`, `created_at`, `updated_at`, `user_edit`, `user_update`) VALUES
@@ -316,7 +328,7 @@ INSERT INTO `personel` (`id_personel`, `nik`, `nama_personel`, `kode_departemen`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ruangan`
+-- Struktur dari tabel `ruangan`
 --
 
 CREATE TABLE `ruangan` (
@@ -333,7 +345,7 @@ CREATE TABLE `ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `ruangan`
+-- Dumping data untuk tabel `ruangan`
 --
 
 INSERT INTO `ruangan` (`id_ruangan`, `no_ruangan`, `nama_ruangan`, `no_gedung`, `no_lantai`, `catatan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
@@ -343,13 +355,14 @@ INSERT INTO `ruangan` (`id_ruangan`, `no_ruangan`, `nama_ruangan`, `no_gedung`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `software`
+-- Struktur dari tabel `software`
 --
 
 CREATE TABLE `software` (
   `id_software` int(11) NOT NULL,
   `kode_software` varchar(50) NOT NULL,
   `nama_software` varchar(50) NOT NULL,
+  `tahun` int(4) NOT NULL,
   `kode_vendor` varchar(50) NOT NULL,
   `jenis_software` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -359,17 +372,17 @@ CREATE TABLE `software` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `software`
+-- Dumping data untuk tabel `software`
 --
 
-INSERT INTO `software` (`id_software`, `kode_software`, `nama_software`, `kode_vendor`, `jenis_software`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
-(2, '116-Test-10', 'Test software', '1', 'PLC', '2022-08-19 03:06:44', '2022-08-19 03:06:44', 0, 0),
-(3, '116-Test-07', 'Mitsubishi Programmable Controller', '1', 'PLC', '2022-08-24 02:23:08', '2022-08-24 02:23:08', 0, 0);
+INSERT INTO `software` (`id_software`, `kode_software`, `nama_software`, `tahun`, `kode_vendor`, `jenis_software`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
+(2, '116-Test-10', 'Test software', 0, '1', 'PLC', '2022-08-19 03:06:44', '2022-08-19 03:06:44', 0, 0),
+(3, '116-Test-07', 'Mitsubishi Programmable Controller', 0, '1', 'PLC', '2022-08-24 02:23:08', '2022-08-24 02:23:08', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
+-- Struktur dari tabel `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -387,7 +400,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `supplier`
+-- Dumping data untuk tabel `supplier`
 --
 
 INSERT INTO `supplier` (`kode_supplier`, `nama_supplier`, `alamat`, `kota`, `telepon`, `kode_kontak`, `catatan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
@@ -397,7 +410,7 @@ INSERT INTO `supplier` (`kode_supplier`, `nama_supplier`, `alamat`, `kota`, `tel
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -413,7 +426,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `username_user`, `password_user`, `keterangan_user`, `level_user`, `kode_departemen`, `created_at`, `updated_at`) VALUES
@@ -429,7 +442,7 @@ INSERT INTO `user` (`id_user`, `nama_user`, `username_user`, `password_user`, `k
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vendor`
+-- Struktur dari tabel `vendor`
 --
 
 CREATE TABLE `vendor` (
@@ -449,7 +462,7 @@ CREATE TABLE `vendor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `vendor`
+-- Dumping data untuk tabel `vendor`
 --
 
 INSERT INTO `vendor` (`kode_vendor`, `nama_vendor`, `alamat`, `kota`, `telepon`, `kode_kontak`, `catatan`, `created_at`, `updated_at`, `email`, `web`, `user_update`, `user_edit`) VALUES
@@ -463,167 +476,173 @@ INSERT INTO `vendor` (`kode_vendor`, `nama_vendor`, `alamat`, `kota`, `telepon`,
 --
 
 --
--- Indexes for table `departemen`
+-- Indeks untuk tabel `departemen`
 --
 ALTER TABLE `departemen`
   ADD PRIMARY KEY (`id_departemen`);
 
 --
--- Indexes for table `direktorat`
+-- Indeks untuk tabel `direktorat`
 --
 ALTER TABLE `direktorat`
-  ADD PRIMARY KEY (`kode_direktorat`);
+  ADD PRIMARY KEY (`id_direktorat`);
 
 --
--- Indexes for table `divisi`
+-- Indeks untuk tabel `divisi`
 --
 ALTER TABLE `divisi`
   ADD PRIMARY KEY (`id_divisi`);
 
 --
--- Indexes for table `equipment`
+-- Indeks untuk tabel `equipment`
 --
 ALTER TABLE `equipment`
   ADD PRIMARY KEY (`id_equipment`);
 
 --
--- Indexes for table `gedung`
+-- Indeks untuk tabel `gedung`
 --
 ALTER TABLE `gedung`
   ADD PRIMARY KEY (`id_gedung`);
 
 --
--- Indexes for table `kontak`
+-- Indeks untuk tabel `kontak`
 --
 ALTER TABLE `kontak`
   ADD PRIMARY KEY (`kode_kontak`);
 
 --
--- Indexes for table `kota`
+-- Indeks untuk tabel `kota`
 --
 ALTER TABLE `kota`
   ADD PRIMARY KEY (`id_kota`);
 
 --
--- Indexes for table `laporan_detail`
+-- Indeks untuk tabel `laporan_detail`
 --
 ALTER TABLE `laporan_detail`
   ADD PRIMARY KEY (`id_trasanksi`,`no_laporan`);
 
 --
--- Indexes for table `laporan_master`
+-- Indeks untuk tabel `laporan_master`
 --
 ALTER TABLE `laporan_master`
   ADD PRIMARY KEY (`no_laporan`);
 
 --
--- Indexes for table `personel`
+-- Indeks untuk tabel `personel`
 --
 ALTER TABLE `personel`
   ADD PRIMARY KEY (`id_personel`);
 
 --
--- Indexes for table `ruangan`
+-- Indeks untuk tabel `ruangan`
 --
 ALTER TABLE `ruangan`
   ADD PRIMARY KEY (`id_ruangan`);
 
 --
--- Indexes for table `software`
+-- Indeks untuk tabel `software`
 --
 ALTER TABLE `software`
   ADD PRIMARY KEY (`id_software`);
 
 --
--- Indexes for table `supplier`
+-- Indeks untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`kode_supplier`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `vendor`
+-- Indeks untuk tabel `vendor`
 --
 ALTER TABLE `vendor`
   ADD PRIMARY KEY (`kode_vendor`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `departemen`
+-- AUTO_INCREMENT untuk tabel `departemen`
 --
 ALTER TABLE `departemen`
   MODIFY `id_departemen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `divisi`
+-- AUTO_INCREMENT untuk tabel `direktorat`
+--
+ALTER TABLE `direktorat`
+  MODIFY `id_direktorat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `divisi`
 --
 ALTER TABLE `divisi`
   MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `equipment`
+-- AUTO_INCREMENT untuk tabel `equipment`
 --
 ALTER TABLE `equipment`
   MODIFY `id_equipment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `gedung`
+-- AUTO_INCREMENT untuk tabel `gedung`
 --
 ALTER TABLE `gedung`
   MODIFY `id_gedung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `kontak`
+-- AUTO_INCREMENT untuk tabel `kontak`
 --
 ALTER TABLE `kontak`
   MODIFY `kode_kontak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `kota`
+-- AUTO_INCREMENT untuk tabel `kota`
 --
 ALTER TABLE `kota`
   MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `personel`
+-- AUTO_INCREMENT untuk tabel `personel`
 --
 ALTER TABLE `personel`
   MODIFY `id_personel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `ruangan`
+-- AUTO_INCREMENT untuk tabel `ruangan`
 --
 ALTER TABLE `ruangan`
   MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `software`
+-- AUTO_INCREMENT untuk tabel `software`
 --
 ALTER TABLE `software`
   MODIFY `id_software` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `supplier`
+-- AUTO_INCREMENT untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
   MODIFY `kode_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `vendor`
+-- AUTO_INCREMENT untuk tabel `vendor`
 --
 ALTER TABLE `vendor`
   MODIFY `kode_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
