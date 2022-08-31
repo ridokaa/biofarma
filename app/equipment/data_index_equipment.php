@@ -15,7 +15,7 @@
     $query = "SELECT equipment.id_equipment, equipment.kode_equipment, equipment.nama_equipment, software.nama_software, ruangan.nama_ruangan, departemen.nama_departemen
               FROM equipment
               JOIN software ON equipment.kode_software=software.kode_software
-              JOIN ruangan ON equipment.id_ruaangan=ruangan.id_ruangan
+              JOIN ruangan ON equipment.id_ruangan=ruangan.id_ruangan
               JOIN departemen ON equipment.kode_departemen=departemen.kode_departemen";
     $hasil = mysqli_query($koneksi, $query);
     
