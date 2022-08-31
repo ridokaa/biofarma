@@ -10,68 +10,125 @@
                     <div class="card-header bg-info">
                         <h1 class="card-title">Laporan Master</h1>
                     </div>
-                        <br></br>
-                        <div class="text-right">
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg">
-                                <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
-                            </button>
-                        </div>
                         <!-- <br></br> -->
+
                         <!-- /.card-header -->
                         <div class="card-body">
                             <div class="container-fluid">
-                                <form method='GET'action="kontak/showbaru_kontak.php">
+                                <form method='GET'action="laporan_master/tambah_data_laporan_master.php">
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-info">
+                                            <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
+                                        </button>
+                                    </div>
+                                    <br></br>
                                 <div class="row">
                                     <div class="col-6">
                                         
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label for="no_laporan" class="col-sm-2 col-form-label">No Laporan</label>
                                         <div class="col-sm-10">
-                                        <!-- <?php echo $user ['no_laporan'];?>
-                                        <?php var_dump($user);?> -->
+                                        <?php echo $user ['no_laporan'];?>
+                                        <?php var_dump($user);?>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="form-group row">
+                                        <label for="no_laporan" class="col-sm-2 col-form-label">No laporan</label>
+                                         <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="no_laporan" placeholder="no laporan" name="no_laporan"required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="kode_departemen" class="col-sm-2 col-form-label">Departemen</label>
                                         <div class="col-sm-10">
-                                        <!-- <?php echo $user ['kode_departemen'];?> -->
+                                            <select class="form-control selectpicker" name="kode_departemen" required>
+                                            <option value="">-Pilih Departemen-</option>
+                                            <?php
+                                            include('../config/koneksi.php');
+                                            //ambil kode direktorate dari tabel direktorat
+                                                $SQL3 = "select * from departemen";
+                                                $Q3 =mysqli_query($koneksi,$SQL3);
+                                                While($data=mysqli_fetch_array($Q3)){
+                                                echo "<option value=$data[kode_departemen]>$data[nama_departemen]</option>";
+                                                };
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="kode_departemen" class="col-sm-2 col-form-label">Divisi</label>
+                                        <label for="kode_divisi" class="col-sm-2 col-form-label">Divisi</label>
                                         <div class="col-sm-10">
-                                        <!-- <?php echo $user ['kode_departemen'];?> -->
+                                            <select class="form-control selectpicker" name="kode_divisi" required>
+                                            <option value="">-Pilih Divisi-</option>
+                                            <?php
+                                            include('../config/koneksi.php');
+                                            //ambil kode direktorate dari tabel direktorat
+                                                $SQL3 = "select * from divisi";
+                                                $Q3 =mysqli_query($koneksi,$SQL3);
+                                                While($data=mysqli_fetch_array($Q3)){
+                                                echo "<option value=$data[kode_divisi]>$data[nama_divisi]</option>";
+                                                };
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="kode_departemen" class="col-sm-2 col-form-label">Direktorat</label>
+                                        <label for="kode_direktorat" class="col-sm-2 col-form-label">Direktorat</label>
                                         <div class="col-sm-10">
-                                        <!-- <?php echo $user ['kode_departemen'];?> -->
+                                            <select class="form-control selectpicker" name="kode_direktorat" required>
+                                            <option value="">-Pilih Direktorat-</option>
+                                            <?php
+                                            include('../config/koneksi.php');
+                                            //ambil kode direktorate dari tabel direktorat
+                                                $SQL3 = "select * from direktorat";
+                                                $Q3 =mysqli_query($koneksi,$SQL3);
+                                                While($data=mysqli_fetch_array($Q3)){
+                                                echo "<option value=$data[kode_direktorat]>$data[nama_direktorat]</option>";
+                                                };
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
+
                                     </div>
                                     <div class="col-6">
+
                                     <div class="form-group row">
                                         <label for="id_personel" class="col-sm-2 col-form-label">Personel</label>
                                         <div class="col-sm-10">
-                                        <!-- <?php echo $view ['id_personel'];?> -->
+                                            <select class="form-control selectpicker" name="id_personel" required>
+                                            <option value="">-Pilih Personel-</option>
+                                            <?php
+                                            include('../config/koneksi.php');
+                                            //ambil kode direktorate dari tabel direktorat
+                                                $SQL3 = "select * from personel";
+                                                $Q3 =mysqli_query($koneksi,$SQL3);
+                                                While($data=mysqli_fetch_array($Q3)){
+                                                echo "<option value=$data[id_personel]>$data[nama_personel]</option>";
+                                                };
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="tanggal_laporan" class="col-sm-2 col-form-label">Tanggal</label>
-                                        <div class="col-sm-10">
-                                        <!-- <?php echo $user ['tanggal_laporan'];?> -->
+                                         <div class="col-sm-10">
+                                            <input type="date" >
                                         </div>
                                     </div>
+
                                     </div>
                                 </div>
-                                    
-
-                                    
+                                     
 
                             </form>
                             </div>
@@ -102,7 +159,7 @@
                                     <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
                                 </button>
                             </div>
-                             <div class="form-group row-right">
+                             <div class="form-group row float-right">
                                         <label for="tanggal_laporan" class="col-sm-2 col-form-label">No Laporan</label>
                                         <div class="col-sm-10">
                                         <!-- <?php echo $user ['tanggal_laporan'];?> -->
