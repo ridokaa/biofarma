@@ -13,10 +13,11 @@ $id_software    = $_POST['id_software'];
 $kode_software  = $_POST['kode_software'];
 $nama_software  = $_POST['nama_software'];
 $kode_vendor    = $_POST['kode_vendor'];
-$jenis_software   = $_POST['jenis_software'];
+$jenis_software = $_POST['jenis_software'];
+$tahun          = $_POST['tahun'];
 
 // masukkan ke database
-$query = "INSERT INTO software(id_software, kode_software, nama_software, kode_vendor, jenis_software) VALUES ('$id_software', '$kode_software', '$nama_software', '$kode_vendor', '$jenis_software', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');";
+$query = "INSERT INTO software(id_software, kode_software, nama_software, kode_vendor, jenis_software,tahun) VALUES ('$id_software', '$kode_software', '$nama_software', '$kode_vendor', '$jenis_software','$tahun', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');";
 
 $hasil = mysqli_query($db, $query);
 
