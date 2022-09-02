@@ -37,17 +37,17 @@ $id_personel        = $_POST['id_personel'];
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database
-$query = "INSERT INTO laporan_master  VALUES ('$no_laporan', '$tanggal_laporan', '$kode_departemen', '$kode_divisi','$kode_direktorat','$id_personel')";
-
+$query = "INSERT INTO laporan_master ( no_laporan, tanggal_laporan, kode_departemen, kode_divisi, kode_direktorat, id_personel)    VALUES ('$no_laporan', '$tanggal_laporan', '$kode_departemen', '$kode_divisi','$kode_direktorat','$id_personel')";
+// var_dump($query);
 $hasil = mysqli_query($koneksi, $query);
 
-var_dump(mysqli_affected_rows($koneksi));
+// var_dump(mysqli_affected_rows($koneksi));
 
-// cek keberhasilan pendambahan data
+//cek keberhasilan pendambahan data
 if ($hasil == true) {
     echo "Penambahan data berhasil";
     header('location:../index.php?page=master&no_laporan=' . $no_laporan);
 } else {
     echo "Penambahan data gagal!" . mysqli_connect_error($koneksi);
-    header('location:../index.php?page=master&no_laporan=' . $no_laporan);
+    header('location:../index.php?page=master');
 }

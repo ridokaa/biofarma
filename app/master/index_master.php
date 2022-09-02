@@ -2,7 +2,7 @@
 <!-- Main content -->
 <?php
 include('data_index_master.php');
-$no_laporan_existing = $_GET['no_laporan'];
+$no_laporan_existing = isset($_GET['no_laporan']);
 ?>
 
 
@@ -40,57 +40,33 @@ $no_laporan_existing = $_GET['no_laporan'];
                             <div class="col-sm-10">
                                 <select class="form-control selectpicker" name="kode_departemen" required>
                                     <option value="">-Pilih Departemen-</option>
-                                    <?php
-                                    include('../config/koneksi.php');
-                                    //ambil kode direktorate dari tabel direktorat
-                                    $SQL3 = "select * from departemen";
-                                    $Q3 = mysqli_query($koneksi, $SQL3);
-                                    while ($data = mysqli_fetch_array($Q3)) {
-                                        echo "<option value=$data[kode_departemen]>$data[nama_departemen]</option>";
-                                    };
+                                    <?php   
+                          $query = mysqli_query($con, "select * from departemen order by kode_departemen esc");  
+                          $result = mysqli_query($con, "SELECT kode_departemen, nama_departemen, divisi.nama_divisi, direktorat.nama_direktorat FROM departemen, divisi, direktorat WHERE departemen.kode_divisi=divisi.kode_divisi and divisi.kode_direktorat=direktorat.kode_direktorat");  
+                          $a          = "var kode_divisi = new Array();\n;";    
+                          while ($row = mysqli_fetch_array($result)) {  
+                               echo '<option name="kode_departemen" value="'.$row['kode_departemen'] . '">' . $row['nama_departemen'] . '</option>';   
+                          $a .= "kode_divisi['" . $row['kode_departemen'] . "'] = {kode_divisi:'" . addslashes($row['kode_divisi'])."'};\n";  
+                          }  
+                                            ?>  
+                                            </select>
+                                        </div>
+                                    </div>
 
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
+                                    <div class="form-group row">
+                                        <label for="kode_divisi" class="col-sm-2 col-form-label">Divisi</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control selectpicker" id="kode_divisi" name="kode_divisi" readonly>
+                                        </div>
+                                    </div>
 
-                        <div class="form-group row">
-                            <label for="kode_divisi" class="col-sm-2 col-form-label">Divisi</label>
-                            <div class="col-sm-10">
-                                <select class="form-control selectpicker" name="kode_divisi" required>
-                                    <option value="">-Pilih Divisi-</option>
-                                    <?php
-                                    include('../config/koneksi.php');
-                                    //ambil kode direktorate dari tabel direktorat
-                                    $SQL3 = "select * from divisi";
-                                    $Q3 = mysqli_query($koneksi, $SQL3);
-                                    while ($data = mysqli_fetch_array($Q3)) {
-                                        echo "<option value=$data[kode_divisi]>$data[nama_divisi]</option>";
-                                    };
+                                    <div class="form-group row">
+                                        <label for="kode_direktorat" class="col-sm-2 col-form-label">Direktorat</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control selectpicker" id="kode_direktorat" name="kode_direktorat" readonly>
+                                        </div>
+                                    </div>
 
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="kode_direktorat" class="col-sm-2 col-form-label">Direktorat</label>
-                            <div class="col-sm-10">
-                                <select class="form-control selectpicker" name="kode_direktorat" required>
-                                    <option value="">-Pilih Direktorat-</option>
-                                    <?php
-                                    include('../config/koneksi.php');
-                                    //ambil kode direktorate dari tabel direktorat
-                                    $SQL3 = "select * from direktorat";
-                                    $Q3 = mysqli_query($koneksi, $SQL3);
-                                    while ($data = mysqli_fetch_array($Q3)) {
-                                        echo "<option value=$data[kode_direktorat]>$data[nama_direktorat]</option>";
-                                    };
-
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
 
                     </div>
                     <div class="col-6">
@@ -153,7 +129,7 @@ $no_laporan_existing = $_GET['no_laporan'];
         <div class="my-3 mr-5">
             <?php
             if (isset($no_laporan_existing)) {
-                echo '<h5>' . $no_laporan_existing . '</h5>';
+                echo '<h5>' . $_GET['no_laporan'] . '</h5>';
             } else {
                 // 
             } ?>
