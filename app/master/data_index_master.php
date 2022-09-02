@@ -7,6 +7,7 @@
     $database   = "softwarealat";
 
     $koneksi = mysqli_connect($host, $user, $pass, $database) or die("gagal koneksi ke database");
+
                                     
     // ambil dari database
     // $query = "SELECT kode_equipment, nama_equipment, software.nama_software, ruangan.nama_ruangan, departemen.nama_departemen FROM equipment, software, ruangan, departemen WHERE equipment.kode_software=software.kode_software, equipment.id_ruangan=ruangan.id_ruangan, equipment.kode_departemen=departemen.kode_departemen";
@@ -25,5 +26,4 @@
     $Urut  =1;//menambahkan no urut
     while ($row = mysqli_fetch_assoc($hasil)) {
     $data_user[] = $row;
-    }                                      
-?>                   
+    }
