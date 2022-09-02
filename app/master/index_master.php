@@ -97,6 +97,14 @@ $no_laporan_existing = isset($_GET['no_laporan']);
                             </div>
                         </div>
 
+                        <script type="text/javascript">   
+                            <?php   
+                             echo $a;   ?>  
+                             function changeValue(id){  
+                            document.getElementById('kode_divisi').value = kode_divisi[id].kode_divisi; 
+                          };  
+                          </script>
+
                     </div>
                 </div>
                 <div class="text-right">
