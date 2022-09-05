@@ -2,7 +2,8 @@
 <!-- Main content -->
 <?php
 include('data_index_master.php');
-$no_laporan_existing = isset($_GET['no_laporan']);
+isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
+
 ?>
 
 
@@ -139,11 +140,8 @@ $no_laporan_existing = isset($_GET['no_laporan']);
         <h5 for="tanggal_laporan" class="my-3 font-weight-bold">No Laporan: </h5>
         <div class="my-3 mr-5">
             <?php
-            if (isset($no_laporan_existing)) {
-                echo '<h5>' . $_GET['no_laporan'] . '</h5>';
-            } else {
-                // 
-            } ?>
+            echo(isset($no_laporan_existing) ? '<h5>' . $no_laporan_existing  . '</h5>': null);
+             ?>
             <!-- <?php echo $user['tanggal_laporan']; ?> -->
         </div>
     </div>
