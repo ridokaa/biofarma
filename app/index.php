@@ -185,6 +185,9 @@ include('header.php')?>;
       elseif($_GET['page']=='master'){
         include('master/index_master.php');
       }
+      elseif($_GET['page']=='detail_tambah'){
+        include('master/tmbh_detail.php');
+      }
       else{
       include('dashboard.php'); 
       //include('../app/departemen/index.php');

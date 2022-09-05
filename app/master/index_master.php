@@ -132,9 +132,7 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
     </div>
     <br></br>
     <div class="text-right">
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg">
-            <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
-        </button>
+        <a href="index.php?page=detail_tambah&& id_transaksi"><button class="btn btn-info"><i class="nav-icon  fas   fa-plus-square "></i>Tambah Data</a></button>
     </div>
     <div class="d-flex justify-content-end border p-2 mt-3">
         <h5 for="tanggal_laporan" class="my-3 font-weight-bold">No Laporan: </h5>
@@ -242,7 +240,7 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
                     } ?>
                 </td>
                 <td>
-                    <?php if($data['tda21_cprpart11_comly'] == 1){
+                    <?php if($data['fda21_cprpart11_comly'] == 1){
                         echo '<span class="badge badge-success">ada</span>';
                         } else{
                             echo '<span class="badge badge-danger">tidak ada</span>';
