@@ -178,9 +178,27 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
                 <td><?php echo $data['nama_software'] ?></td>
                 <td><?php echo $data['nama_supplier'] ?></td>
                 <td><?php echo $data['nama_vendor'] ?></td>
-                <td><?php echo $data['val_plan'] ?></td>
-                <td><?php echo $data['urs'] ?></td>
-                <td><?php echo $data['protokol'] ?></td>
+                <td>
+                    <?php if($data['val_plan'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td>
+                    <?php if($data['urs'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td>
+                    <?php if($data['protokol'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
                 <td>
                     <?php if($data['iq'] == 1){
                         echo '<span class="badge badge-success">ada</span>';
@@ -188,12 +206,48 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
                             echo '<span class="badge badge-danger">tidak ada</span>';
                     } ?>
                 </td>
-                <td><?php echo $data['oq'] ?></td>
-                <td><?php echo $data['pq'] ?></td>
-                <td><?php echo $data['val_report'] ?></td>
-                <td><?php echo $data['change_kontrol'] ?></td>
-                <td><?php echo $data['sop'] ?></td>
-                <td><?php echo $data['tda21_cprpart11_comly'] ?></td>
+                <td>
+                    <?php if($data['oq'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td>
+                    <?php if($data['pq'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td>
+                    <?php if($data['val_report'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td>
+                    <?php if($data['change_kontrol'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td>
+                    <?php if($data['sop'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td>
+                    <?php if($data['tda21_cprpart11_comly'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
                 <td><?php echo $data['keterangan'] ?></td>
                 
 
