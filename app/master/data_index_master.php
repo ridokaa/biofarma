@@ -20,10 +20,26 @@
               JOIN divisi ON laporan_master.kode_divisi=divisi.kode_divisi
               JOIN direktorat ON laporan_master.kode_direktorat=direktorat.kode_direktorat";
     $hasil = mysqli_query($koneksi, $query);
-    
+
+    $queryd = "SELECT laporan_detail.id_trasanksi, laporan_master.no_laporan, equipment.kode_equipment, equipment.nama_equipment, software.nama_software, supplier.nama_supplier, vendor.nama_vendor, 
+    laporan_detail.val_plan, laporan_detail.urs_number, laporan_detail.urs, laporan_detail.protokol_number, laporan_detail.protokol, laporan_detail.iq, laporan_detail.oq, laporan_detail.pq, laporan_detail.iq_number,
+    laporan_detail.oq_number, laporan_detail.val_report, laporan_detail.change_kontrol, laporan_detail.sop, laporan_detail.tda21_cprpart11_comly, laporan_detail.keterangan
+    FROM laporan_detail
+    JOIN laporan_master ON laporan_master.no_laporan=laporan_detail.no_laporan
+    JOIN equipment ON equipment.kode_equipment=laporan_detail.kode_equipment
+    JOIN software ON software.kode_software=laporan_detail.kode_software
+    JOIN supplier ON supplier.kode_supplier=laporan_detail.kode_supplier
+    JOIN vendor ON vendor.kode_vendor=laporan_detail.kode_vendor";
+    $hasild = mysqli_query($koneksi, $queryd);
+
+
     $data_user = array();
+    $data_laporan_detail = array();
 
     $Urut  =1;//menambahkan no urut
     while ($row = mysqli_fetch_assoc($hasil)) {
     $data_user[] = $row;
+    }
+    while ($row = mysqli_fetch_assoc($hasild)) {
+    $data_laporan_detail[] = $row;
     }

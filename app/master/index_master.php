@@ -146,6 +146,7 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
         </div>
     </div>
     <br></br>
+    <!-- <?php var_dump($data_laporan_detail); ?> -->
     <thead>
         <tr class="bg-info">
             <th>#</th>
@@ -169,11 +170,32 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
         </tr>
 
     <tbody>
-        <?php foreach ($data_user as $user) : ?>
+        <?php foreach ($data_laporan_detail as $data) : ?>
             <tr>
                 <td><?php echo $Urut++ ?></td><!-- no urut -->
-                <!-- <td><?php echo $user['kode_direktorat'] ?></td>
-                                                    <td><?php echo $user['nama_direktorat'] ?></td> -->
+                <td><?php echo $data['nama_equipment'] ?></td>
+                <td><?php echo $data['kode_equipment'] ?></td>
+                <td><?php echo $data['nama_software'] ?></td>
+                <td><?php echo $data['nama_supplier'] ?></td>
+                <td><?php echo $data['nama_vendor'] ?></td>
+                <td><?php echo $data['val_plan'] ?></td>
+                <td><?php echo $data['urs'] ?></td>
+                <td><?php echo $data['protokol'] ?></td>
+                <td>
+                    <?php if($data['iq'] == 1){
+                        echo '<span class="badge badge-success">ada</span>';
+                        } else{
+                            echo '<span class="badge badge-danger">tidak ada</span>';
+                    } ?>
+                </td>
+                <td><?php echo $data['oq'] ?></td>
+                <td><?php echo $data['pq'] ?></td>
+                <td><?php echo $data['val_report'] ?></td>
+                <td><?php echo $data['change_kontrol'] ?></td>
+                <td><?php echo $data['sop'] ?></td>
+                <td><?php echo $data['tda21_cprpart11_comly'] ?></td>
+                <td><?php echo $data['keterangan'] ?></td>
+                
 
                 <!-- Single button -->
                 <div class="btn-group pull-right">
