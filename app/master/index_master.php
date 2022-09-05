@@ -38,7 +38,10 @@ $no_laporan_existing = isset($_GET['no_laporan']);
                         <div class="form-group row">
                             <label for="kode_departemen" class="col-sm-2 col-form-label">Departemen</label>
                             <div class="col-sm-10">
-                                <select class="form-control selectpicker" name="kode_departemen" required>
+                                <?php   
+                                    $con = mysqli_connect("localhost","root","","softwarealat");  
+                                ?>
+                                    <select class="form-control selectpicker" id="kode_departemen" name="kode_departemen" onchange='changeValue(this.value)' required>
                                     <option value="">-Pilih Departemen-</option>
                                     <?php   
                           $query = mysqli_query($con, "select * from departemen order by kode_departemen esc");  
