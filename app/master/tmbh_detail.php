@@ -85,7 +85,7 @@
                             
                             <div class="form-group row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="file-protokol">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             </div>
@@ -100,7 +100,7 @@
                             
                             <div class="form-group row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="file-iq">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             </div>
@@ -130,7 +130,7 @@
                             
                             <div class="form-group row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="file-pq">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             </div>
@@ -145,7 +145,7 @@
                             
                             <div class="form-group row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="val_report">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             </div>
@@ -160,7 +160,7 @@
                             
                             <div class="form-group row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="file-change_kontrol">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             </div>
@@ -175,7 +175,7 @@
                             
                             <div class="form-group row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="sop">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             </div>
@@ -190,7 +190,7 @@
                             
                             <div class="form-group row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="fda21_cprpart11_comly">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             </div>
