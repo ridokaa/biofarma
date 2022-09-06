@@ -2,46 +2,50 @@
              
                  <div class="modal-header bg-info">
               <h4 class="modal-title">Laporan Detail</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
             <form class="form-horizontal" method="post" action="master/tambah_data_laporan_master.php" enctype="multipart/form-data">
             <div class="modal-body">
                     <!-- Horizontal Form -->
                     
                     <!-- form start -->
-                    
-                        <div class="form-group row">
+
+                            <div class="form-group row">
+                                <label for="id_transaksi" class="col-sm-2 col-form-label">ID Transsaksi</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="id_transaksi" placeholder="id transaksi" name="id_transaksi">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="nama_equipment" class="col-sm-2 col-form-label">Nama Alat</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-6">
                                     <input type="text" class="form-control" id="nama_equipment" placeholder="nama equipment" name="nama_equipment">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="kode_equipment" class="col-sm-2 col-form-label">ID Alat</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-6">
                                     <input type="text" class="form-control" id="kode_equipment" placeholder="ID alat" name="kode_equipment">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="nama_software" class="col-sm-2 col-form-label">Software</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-6">
                                     <input type="text" class="form-control" id="nama_software" placeholder="software" name="nama_software" >
                                 </div>
                             </div>
                               <div class="form-group row">
                                 <label for="nama_supplier" class="col-sm-2 col-form-label">Supplier</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-6">
                                     <input type="text" class="form-control" id="nama_supplier" placeholder="supplier" name="nama_supplier">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="nama_vendor" class="col-sm-2 col-form-label">Vendor</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-6">
                                     <input type="text" class="form-control" id="nama_vendor" placeholder="vendor" name="nama_vendor">
                                 </div>
                             </div>
@@ -56,7 +60,7 @@
                                 <div class="form-group row">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="customFile" name="file-val_plan">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                        <label class="custom-file-label" for="customFile">Pilih file</label>
                                     </div>
                                 </div>
                             </div>
@@ -198,7 +202,7 @@
 
                             <div class="form-group row">
                                 <label for="keterangan" class="col-sm-2 col-form-label">Keterangan</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-6">
                                     <input type="text" class="form-control" id="keterangan" placeholder="keterangan" name="keterangan">
                                 </div>
                             </div>

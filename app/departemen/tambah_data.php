@@ -33,8 +33,8 @@ $kode_divisi      = $_GET['kode_divisi'];
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database
-$query = "INSERT INTO departemen (id_departemen, kode_departemen,nama_departemen,kode_divisi)  VALUES ('$id_departemen', '$kode_departemen', '$nama_departemen', '$kode_divisi')";
-var_dump(mysqli_affected_rows($koneksi));
+$query = "INSERT INTO departemen (id_departemen, kode_departemen, nama_departemen, kode_divisi)  VALUES ('$id_departemen', '$kode_departemen', '$nama_departemen', '$kode_divisi')";
+// var_dump(mysqli_affected_rows($koneksi));
 
 $hasil = mysqli_query($koneksi, $query);
 
