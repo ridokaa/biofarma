@@ -53,12 +53,12 @@
                                 <input type="radio" id="val_plan" name="val_plan">
                                 <label for="val_plan" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="file-val_plan">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-val_plan">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -68,12 +68,12 @@
                                 <input type="radio" id="urs" name="urs">
                                 <label for="urs" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="file-urs">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-urs">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -83,12 +83,12 @@
                                 <input type="radio" id="protokol" name="protokol">
                                 <label for="protokol" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="file-protokol">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-protokol">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -98,12 +98,12 @@
                                 <input type="radio" id="iq" name="iq">
                                 <label for="iq" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="file-iq">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-iq">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -113,12 +113,12 @@
                                 <input type="radio" id="oq" name="oq">
                                 <label for="oq" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="file-oq">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-oq">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -128,12 +128,12 @@
                                 <input type="radio" id="pq" name="pq">
                                 <label for="pq" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="file-pq">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-pq">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -143,12 +143,12 @@
                                 <input type="radio" id="val_report" name="val_report">
                                 <label for="val_report" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="val_report">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="val_report">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -158,12 +158,12 @@
                                 <input type="radio" id="change_kontrol" name="change_kontrol">
                                 <label for="change_kontrol" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="file-change_kontrol">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-change_kontrol">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -173,12 +173,12 @@
                                 <input type="radio" id="sop" name="sop">
                                 <label for="sop" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="sop">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="sop">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -188,12 +188,12 @@
                                 <input type="radio" id="fda21_cprpart11_comly" name="fda21_cprpart11_comly">
                                 <label for="fda21_cprpart11_comly" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
-                            <div class="form-group row">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="fda21_cprpart11_comly">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="fda21_cprpart11_comly">
+                                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
