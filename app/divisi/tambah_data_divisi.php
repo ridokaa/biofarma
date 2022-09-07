@@ -24,6 +24,7 @@
 
 
 // ambil data dari form
+$id_divisi          = $_GET['id_divisi'];
 $kode_divisi        = $_GET['kode_divisi'];
 $nama_divisi        = $_GET['nama_divisi'];
 $kode_direktorat    = $_GET['kode_direktorat'];
@@ -32,7 +33,7 @@ $kode_direktorat    = $_GET['kode_direktorat'];
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database
-$query = "INSERT INTO divisi (kode_divisi, nama_divisi,kode_direktorat)  VALUES ('$kode_divisi', '$nama_divisi','$kode_direktorat')";
+$query = "INSERT INTO divisi (id_divisi, kode_divisi, nama_divisi,kode_direktorat)  VALUES ('$id_divisi', '$kode_divisi', '$nama_divisi','$kode_direktorat')";
 
 $hasil = mysqli_query($koneksi, $query);
 

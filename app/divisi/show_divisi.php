@@ -2,9 +2,10 @@
 include('../config/koneksi.php');
 
 $kode_divisi        = $_GET['kode_divisi'];
-$query  = mysqli_query($koneksi, "  SELECT * FROM divisi WHERE kode_divisi='$kode_divisi'");
+$query  = mysqli_query($koneksi, "SELECT * FROM divisi WHERE kode_divisi=$kode_divisi");
 $view        = mysqli_fetch_assoc($query);
-?>                    <!-- Horizontal Form -->
+?> 
+<!-- Horizontal Form -->
 <!-- <section class="content">
   <div class="container-fluid">  
         <div class="card">

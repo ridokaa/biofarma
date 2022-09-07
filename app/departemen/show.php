@@ -4,7 +4,8 @@ include('../config/koneksi.php');
 $kode_departemen         = $_GET['kode_departemen'];
 $query  = mysqli_query($koneksi, "  SELECT * FROM departemen WHERE kode_departemen='$kode_departemen'");
 $view        = mysqli_fetch_assoc($query);
-?>                    <!-- Horizontal Form -->
+?>         
+<!-- Horizontal Form -->
 <section class="content">
   <div class="container-fluid">  
         <div class="card">

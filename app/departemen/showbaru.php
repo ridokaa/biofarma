@@ -28,8 +28,8 @@ $kode_departemen  = $_GET['kode_departemen'];
 $nama_departemen  = $_GET['nama_departemen'];
 $kode_divisi      = $_GET['kode_divisi'];
 $id_departemen    = $_GET['id_departemen'];
-$created_at    = $_GET['created_at'];
-$updated_at    = $_GET['updated_at'];
+$created_at       = $_GET['created_at'];
+$updated_at       = $_GET['updated_at'];
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database

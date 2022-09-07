@@ -24,16 +24,16 @@
 
 
 // ambil data dari form
+$id_divisi          = $_GET['id_divisi'];
 $kode_divisi        = $_GET['kode_divisi'];
 $nama_divisi        = $_GET['nama_divisi'];
 $kode_direktorat    = $_GET['kode_direktorat'];
-$id_ruangan          = $_GET['id_ruangan'];
-$created_at          = $_GET['created_at'];
-$updated_at          = $_GET['updated_at'];
+$created_at         = $_GET['created_at'];
+$updated_at         = $_GET['updated_at'];
 //var_dump($kode_departemen,$nama_departemen, $kode_divisi ); die;
 
 // masukkan ke database
-$query = "SELECT * FROM divisi WHERE kode_divisi='$kode_divisi'";
+$query = "SELECT * FROM divisi WHERE id_divisi='$id_divisi'";
 
 $hasil = mysqli_query($koneksi, $query);
 
