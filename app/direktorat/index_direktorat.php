@@ -110,17 +110,18 @@
                
                 
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-info" data-dismiss="modal">
-               <i class="nav-icon fas   fa-times-circle "></i>Tutup
-               </button>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">
+                <i class="nav-icon fas   fa-times-circle "></i>Tutup
+                </button>
 
-              <button type="submit" class="btn btn-info"> 
-                <i class="nav-icon fas  a-life-saver  "></i> Simpan
-              </button>
+                <button type="submit" class="btn btn-info"> 
+                    <i class="nav-icon fas  a-life-saver  "></i> Simpan
+                </button>
+                </div>
             </div>
-          </div>
-          </form>
+            </form>
+            </div>
           <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->

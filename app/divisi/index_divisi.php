@@ -48,12 +48,12 @@
 
                                         <li class="divider"></li>
                                         <li>
-                                        <a href="index.php?page=edit&& kode_divisi=<?php echo $user['kode_divisi']; ?>"> <i class="nav-icon fas fa-edit"></i> Ubah</a>
+                                        <a href="index.php?page=divisi_edit&& kode_divisi=<?php echo $user['kode_divisi']; ?>"> <i class="nav-icon fas fa-edit"></i> Ubah</a>
                                         </li>
 
                                         <li class="divider"></li>
                                         <li>
-                                        <!-- <a href="departemen/delete.php?kode_departemen=<?php echo $user['kode_departemen'] ?>" onclick="return confirm('Yakin hapus data ini?')">
+                                        <!-- <a href="departemen/delete.php?kode_departemen=<?php echo $user['kode_divisi'] ?>" onclick="return confirm('Yakin hapus data ini?')">
                                         <i class="nav-icon  fas  fa-remove"></i> Hapus</a> -->
                                         <a href="#" onClick="confirm_modal('divisi/delete_divisi.php?&kode_divisi=<?php echo  $user['kode_divisi'] ?>');">
                                               <i class="nav-icon  fas  fa-remove"></i> Hapus
@@ -97,27 +97,40 @@
                     <!-- form start -->
                     
                         <div class="card-body">
-                        <div class="form-group row">
-                            <label for="kode_divisi" class="col-sm-2 col-form-label">Kode Divisi</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" id="kode_divisi" placeholder="kode divisi" name="kode_divisi">
+                            <div class="form-group row">
+                                <label for="kode_divisi" class="col-sm-2 col-form-label">Kode Divisi</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="kode_divisi" placeholder="kode divisi" name="kode_divisi">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="nama_divisi" class="col-sm-2 col-form-label">Nama Divisi</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama_divisi" placeholder="nama divisi" name="nama_divisi">
+                            <div class="form-group row">
+                                <label for="nama_divisi" class="col-sm-2 col-form-label">Nama Divisi</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="nama_divisi" placeholder="nama divisi" name="nama_divisi">
+                                </div>
                             </div>
-                        </div>
 
-               
-                        <div class="card-body">
-                        <div class="form-group row">
-                            <label for="kode_direktorat" class="col-sm-2 col-form-label">Kode Direktorat</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" id="kode_direktorat" placeholder="kode direktorat" name="kode_direktorat">
+                
+                            <div class="form-group row">
+                                <label for="kode_direktorat" class="col-sm-2 col-form-label">Direktorat</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control selectpicker" name="kode_direktorat" required>
+                                    <option value="">-Pilih Divisi-</option>
+                                    <?php
+                                    include('../config/koneksi.php');
+                                    //ambil kode direktorate dari tabel direktorat
+                                        $SQL3 = "select * from direktorat";
+                                        $Q3 =mysqli_query($koneksi,$SQL3);
+                                        While($data=mysqli_fetch_array($Q3)){
+                                        echo "<option value=$data[kode_direktorat]>$data[nama_direktorat]</option>";
+                                        };
+
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
+            </div>
                         
             <div class="modal-footer">
               <button type="button" class="btn btn-info" data-dismiss="modal">
