@@ -55,6 +55,7 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
                                             ?>  
                                             </select>
                                         </div>
+                                    
                                     </div>
 
                                     <div class="form-group row">
@@ -249,33 +250,33 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
                 </td>
                 <td><?php echo $data['keterangan'] ?></td>
                 
+                <td>
+                    <!-- Single button -->
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-info btn-xs dropdown-toggle " data-toggle="dropdown" aria-expanded="true">
+                            <span class="caret">Pilih Aksi</span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu" bg-dark>
+                            <li>
+                                <a href="index.php?page=direktorat_detail&& kode_direktorat=<?php echo $user['kode_direktorat']; ?>">
+                                    <i class="nav-icon  fas fa-folder-open"></i> Detail</a>
+                            </li>
 
-                <!-- Single button -->
-                <div class="btn-group pull-right">
-                    <button type="button" class="btn btn-info btn-xs dropdown-toggle " data-toggle="dropdown" aria-expanded="true">
-                        <span class="caret">Pilih Aksi</span>
-                    </button>
-                    <ul class="dropdown-menu pull-right" role="menu" bg-dark>
-                        <li>
-                            <a href="index.php?page=direktorat_detail&& kode_direktorat=<?php echo $user['kode_direktorat']; ?>">
-                                <i class="nav-icon  fas fa-folder-open"></i> Detail</a>
-                        </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="index.php?page=edit&& kode_departemen=<?php echo $user['kode_departemen']; ?>"> <i class="nav-icon fas fa-edit"></i> Ubah</a>
+                            </li>
 
-                        <li class="divider"></li>
-                        <li>
-                            <a href="index.php?page=edit&& kode_departemen=<?php echo $user['kode_departemen']; ?>"> <i class="nav-icon fas fa-edit"></i> Ubah</a>
-                        </li>
-
-                        <li class="divider"></li>
-                        <li>
-                            <!-- <a href="departemen/delete.php?kode_departemen=<?php echo $user['kode_departemen'] ?>" onclick="return confirm('Yakin hapus data ini?')">
-                                                            <i class="nav-icon  fas  fa-remove"></i> Hapus</a> -->
-                            <a href="#" onClick="confirm_modal('direktorat/delete_direktorat.php?&kode_direktorat=<?php echo  $user['kode_direktorat'] ?>');">
-                                <i class="nav-icon  fas  fa-remove"></i> Hapus
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                            <li class="divider"></li>
+                            <li>
+                                <!-- <a href="departemen/delete.php?kode_departemen=<?php echo $user['kode_departemen'] ?>" onclick="return confirm('Yakin hapus data ini?')">
+                                                                <i class="nav-icon  fas  fa-remove"></i> Hapus</a> -->
+                                <a href="#" onClick="confirm_modal('direktorat/delete_direktorat.php?&kode_direktorat=<?php echo  $user['kode_direktorat'] ?>');">
+                                    <i class="nav-icon  fas  fa-remove"></i> Hapus
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </td>
             </tr>
         <?php endforeach ?>
