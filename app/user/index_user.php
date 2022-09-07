@@ -65,7 +65,7 @@
                                             <!-- <a href="delete.php?id_user=<?php echo $user['id_user'] ?>" onclick="return confirm('Yakin hapus data ini?')">
                                             <i class="nav-icon  fas  fa-remove"></i> Hapus
                                             </a> -->
-                                            <a href="#" onClick="confirm_modal('personel/delete_user.php?&id_personel=<?php echo  $user['id_user'] ?>');">
+                                            <a href="#" onClick="confirm_modal('user/delete_user.php?&id_user=<?php echo  $user['id_user'] ?>');">
                                               <i class="nav-icon  fas  fa-remove"></i> Hapus
                                             </a>
                                             </li>
