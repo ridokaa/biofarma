@@ -10,7 +10,7 @@
                     <!-- form start -->
 
                             <div class="form-group row">
-                                <label for="id_transaksi" class="col-sm-2 col-form-label">ID Transsaksi</label>
+                                <label for="id_transaksi" class="col-sm-2 col-form-label">ID Transaksi</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="id_transaksi" placeholder="id transaksi" name="id_transaksi">
                                 </div>
