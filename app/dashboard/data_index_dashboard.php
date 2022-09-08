@@ -8,17 +8,14 @@
 
     $koneksi = mysqli_connect($host, $user, $pass, $database) or die("gagal koneksi ke database");
 
-    $query_departemen = "SELECT COUNT(*) AS total FROM departemen";
-    $hasil_departemen = mysqli_query($koneksi, $query_departemen);
-    $jumlah_departemen = mysqli_fetch_assoc($hasil_departemen);
+    $query_software = "SELECT COUNT(*) AS total FROM software";
+    $hasil_software = mysqli_query($koneksi, $query_software);
+    $jumlah_software = mysqli_fetch_assoc($hasil_software);
 
-    $query_divisi = "SELECT COUNT(*) AS total FROM divisi";
-    $hasil_divisi = mysqli_query($koneksi, $query_divisi);
-    $jumlah_divisi = mysqli_fetch_assoc($hasil_divisi);
+    $query_equipment = "SELECT COUNT(*) AS total FROM equipment";
+    $hasil_equipment = mysqli_query($koneksi, $query_equipment);
+    $jumlah_equipment = mysqli_fetch_assoc($hasil_equipment);
 
-    $query_direktorat = "SELECT COUNT(*) AS total FROM direktorat";
-    $hasil_direktorat = mysqli_query($koneksi, $query_direktorat);
-    $jumlah_direktorat = mysqli_fetch_assoc($hasil_direktorat);
 
 
 ?>
