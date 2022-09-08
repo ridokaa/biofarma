@@ -43,20 +43,20 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
                                     $con = mysqli_connect("localhost","root","","softwarealat");  
                                 ?>
                                     <select class="form-control selectpicker" id="kode_departemen" name="kode_departemen" onchange='changeValue(this.value)' required>
-                                    <option value="">-Pilih Departemen-</option>
-                                    <?php   
-                                            $query = mysqli_query($con, "SELECT * FROM departemen ORDER BY kode_departemen esc");  
-                                            $result = mysqli_query($con, "SELECT kode_departemen, nama_departemen, divisi.nama_divisi, direktorat.nama_direktorat FROM departemen, divisi, direktorat WHERE departemen.kode_divisi=divisi.kode_divisi AND divisi.kode_direktorat=direktorat.kode_direktorat");  
-                                            $a          = "var kode_divisi = new Array();\n;";    
-                                            while ($row = mysqli_fetch_array($result)) {  
-                                                echo '<option name="kode_departemen" value="'.$row['kode_departemen'] . '">' . $row['nama_departemen'] . '</option>';   
-                                                $a .= "kode_divisi['" . $row['kode_departemen'] . "'] = {kode_divisi:'" . addslashes($row['kode_divisi'])."'};\n";  
-                                            }  
-                                            ?>  
-                                            </select>
-                                        </div>
+                                        <option value="">-Pilih Departemen-</option>
+                                            <?php   
+                                                    $query = mysqli_query($con, "SELECT * FROM departemen ORDER BY kode_departemen esc");  
+                                                    $result = mysqli_query($con, "SELECT kode_departemen, nama_departemen, divisi.nama_divisi, direktorat.nama_direktorat FROM departemen, divisi, direktorat WHERE departemen.kode_divisi=divisi.kode_divisi AND divisi.kode_direktorat=direktorat.kode_direktorat");  
+                                                    $a          = "var kode_divisi = new Array();\n;";    
+                                                    while ($row = mysqli_fetch_array($result)) {  
+                                                        echo '<option name="kode_departemen" value="'.$row['kode_departemen'] . '">' . $row['nama_departemen'] . '</option>';   
+                                                        $a .= "kode_divisi['" . $row['kode_departemen'] . "'] = {kode_divisi:'" . addslashes($row['kode_divisi'])."'};\n";  
+                                                    }  
+                                            ?>
+                                    </select>
+                             </div>
                                     
-                                    </div>
+                        </div>
 
                                     <div class="form-group row">
                                         <label for="kode_divisi" class="col-sm-2 col-form-label">Divisi</label>
