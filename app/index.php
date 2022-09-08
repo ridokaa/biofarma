@@ -52,9 +52,12 @@ include('header.php')?>;
      //include('../app/departemen/index.php');
     if (isset($_GET['page'])){
          //Jika halaman page = Dasboard
-        if($_GET['page']=='dashboard'){
+        if($_GET['page']=='dashboardb'){
           include('dashboard.php');
        }
+      if($_GET['page']=='dashboard'){
+        include('dashboard/index_dashboard.php');
+      }
         //Jika halamam page = data departemen
        elseif($_GET['page']=='departemen'){
        include('departemen/index.php');

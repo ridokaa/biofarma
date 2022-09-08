@@ -10,6 +10,13 @@
                 <p>DASHBOARD</p>
                 </a>
           </li>
+
+          <li class="nav-item">
+                <a href="index.php?page=dashboardb" class="nav-link">
+                <i class="nav-icon  fas fa-desktop"></i>
+                <p>DASHBOARD DUMMY</p>
+                </a>
+          </li>
  
         
            <!-- START MENU REFERENSI --> 
