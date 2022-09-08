@@ -130,12 +130,6 @@
             </a>
 
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pembuatan Laporan</p>
-                </a>
-              </li>
 
               <li class="nav-item">
                 <a href="pages/charts/flot.html" class="nav-link">
@@ -155,12 +149,12 @@
 
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/UI/general.html" class="nav-link">
+                        <a href="index.php?page=master" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Daftar Departemen</p>
+                        <p>Pembuatan Laporan</p>
                         </a>
                     </li>
-
+<!-- 
                     <li class="nav-item">
                         <a href="pages/UI/icons.html" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
@@ -180,7 +174,7 @@
                         <i class="far fa-circle nav-icon"></i>
                         <p>Grafik</p>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             <!-- END MENU LAPORAN --> 
 
@@ -222,25 +216,5 @@
 
             <!-- END MENU USER --> 
 
-            <li class="nav-item ">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas  fa-database"></i>
-                    <p>DATA Test<i class="right fas fa-angle-left"></i></p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="index.php?page=master" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Master Detail Test</p>
-                        </a>
-                    </li>
-
-
-
-
-
-
-
-            </li>
             
       </nav>
