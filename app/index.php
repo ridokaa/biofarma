@@ -196,7 +196,7 @@ include('header.php')?>;
       //include('../app/departemen/index.php');
       }
   }
-    ?>; 
+    ?> 
     
     <!-- /.content -->
 
