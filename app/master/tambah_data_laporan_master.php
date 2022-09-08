@@ -235,6 +235,24 @@ if ($terupload) {
     echo "Upload Gagal!";
 }
 
+// FILE UPLOAD CHANGE KONTROL
+// ambil data file
+$namaFile = $_FILES['file-change_kontrol']['name'];
+$namaSementara = $_FILES['file-change_kontrol']['tmp_name'];
+
+// tentukan lokasi file akan dipindahkan
+$dirUpload = "../../uploads/change_kontrol/";
+
+// pindahkan file
+$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+
+if ($terupload) {
+    echo "Upload berhasil!<br/>";
+    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+} else {
+    echo "Upload Gagal!";
+}
+
 // FILE UPLOAD FDA CFR Part 11 Comply
 // ambil data file
 $namaFile = $_FILES['file-fda21_cprpart11_comly']['name'];

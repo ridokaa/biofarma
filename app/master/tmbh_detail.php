@@ -149,7 +149,7 @@
                             
                                 <div class="form-group row">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile" name="val_report">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-val_report">
                                         <label class="custom-file-label" for="customFile">Pilih File</label>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@
                             
                                 <div class="form-group row">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile" name="sop">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-sop">
                                         <label class="custom-file-label" for="customFile">Pilih File</label>
                                     </div>
                                 </div>
@@ -194,7 +194,7 @@
                             
                                 <div class="form-group row">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile" name="fda21_cprpart11_comly">
+                                        <input type="file" class="custom-file-input" id="customFile" name="file-fda21_cprpart11_comly">
                                         <label class="custom-file-label" for="customFile">Pilih File</label>
                                     </div>
                                 </div>
