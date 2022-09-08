@@ -137,13 +137,19 @@
             </a>
 
             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="index.php?page=master" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Pembuatan Laporan</p>
+                        </a>
+                    </li>
 
-              <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Rekap Laporan</p>
-                </a>
-              </li>
+                <li class="nav-item">
+                        <a href="pages/charts/flot.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Rekap Laporan</p>
+                        </a>
+                </li>
             </ul>
         <!-- END MENU TRANSAKSI --> 
             
