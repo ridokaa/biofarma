@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2022 at 08:41 AM
+-- Generation Time: Sep 12, 2022 at 03:02 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -122,7 +122,7 @@ INSERT INTO `divisi` (`id_divisi`, `kode_divisi`, `nama_divisi`, `kode_direktora
 (19, '6200', 'Divisi Pemasaran &amp; Penjualan Internasional', '6000', '2022-07-18 12:23:21', '0000-00-00 00:00:00', 0, 0),
 (20, '6300', 'Divisi Komunikasi Pemasaran &amp; Distribusi', '6000', '2022-07-18 12:24:05', '0000-00-00 00:00:00', 0, 0),
 (21, '6400', 'Divisi Unit Klinik &amp; Imunisasi', '6000', '2022-07-18 12:24:31', '0000-00-00 00:00:00', 0, 0),
-(22, '7100', 'Divisi Pengawasan Mutu', '', '2022-07-18 12:25:23', '0000-00-00 00:00:00', 0, 0),
+(22, '7100', 'Divisi Pengawasan Mutu', '7000', '2022-07-18 12:25:23', '2022-09-07 08:14:53', 0, 0),
 (23, '7200', 'Divisi Hewan Laboratorium', '7000', '2022-07-18 12:25:48', '0000-00-00 00:00:00', 0, 0),
 (24, '7400', 'Peneliti', '7000', '2022-07-18 12:26:17', '0000-00-00 00:00:00', 0, 0),
 (25, '7500', 'Satuan Pengawasan Intern', '7000', '2022-07-18 12:25:01', '0000-00-00 00:00:00', 0, 0);
@@ -151,7 +151,6 @@ CREATE TABLE `equipment` (
 --
 
 INSERT INTO `equipment` (`id_equipment`, `kode_equipment`, `nama_equipment`, `kode_software`, `kode_departemen`, `id_ruangan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
-(3, '204-TOC-02 ', 'TOC ', '116-Test-10', '4235', 3, '2022-08-24 02:03:57', '2022-08-24 03:55:29', 0, 0),
 (4, '204-ICP-01  ', 'Analisa Logam', '116-Test-10', '5434', 2, '2022-08-24 02:12:49', '2022-08-29 03:20:15', 0, 0);
 
 -- --------------------------------------------------------
@@ -250,15 +249,11 @@ CREATE TABLE `laporan_detail` (
   `kode_supplier` int(11) NOT NULL,
   `kode_vendor` int(11) NOT NULL,
   `val_plan` tinyint(1) NOT NULL,
-  `urs_number` varchar(50) NOT NULL,
   `urs` tinyint(1) NOT NULL,
-  `protokol_number` varchar(50) NOT NULL,
   `protokol` tinyint(1) NOT NULL,
   `iq` tinyint(1) NOT NULL,
   `oq` tinyint(1) NOT NULL,
   `pq` tinyint(1) NOT NULL,
-  `iq_number` varchar(50) NOT NULL,
-  `oq_number` varchar(50) NOT NULL,
   `val_report` tinyint(1) NOT NULL,
   `change_kontrol` tinyint(1) NOT NULL,
   `sop` tinyint(1) NOT NULL,
@@ -267,16 +262,27 @@ CREATE TABLE `laporan_detail` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `user_edit` int(11) NOT NULL,
-  `user_update` int(11) NOT NULL
+  `user_update` int(11) NOT NULL,
+  `url_file_val_plan` text NOT NULL,
+  `url_file_urs` text NOT NULL,
+  `url_file_protokol` text NOT NULL,
+  `url_file_iq` text NOT NULL,
+  `url_file_oq` text NOT NULL,
+  `url_file_pq` text NOT NULL,
+  `url_file_val_report` text NOT NULL,
+  `url_file_change_kontrol` text NOT NULL,
+  `url_file_sop` text NOT NULL,
+  `url_file_fda21_cprpart11_comly` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `laporan_detail`
 --
 
-INSERT INTO `laporan_detail` (`id_transaksi`, `no_laporan`, `kode_equipment`, `kode_software`, `kode_supplier`, `kode_vendor`, `val_plan`, `urs_number`, `urs`, `protokol_number`, `protokol`, `iq`, `oq`, `pq`, `iq_number`, `oq_number`, `val_report`, `change_kontrol`, `sop`, `fda21_cprpart11_comly`, `keterangan`, `created_at`, `update_at`, `user_edit`, `user_update`) VALUES
-(1, '1/115/II/2022', '204-TOC-02 ', '116-Test-10', 1, 1, 1, '1234567', 1, '123567', 0, 1, 1, 1, '123', '123', 1, 1, 1, 1, 'testtttttttttttttttt', '2022-09-05 01:12:47', '2022-09-05 03:36:16', 0, 0),
-(156, '1/115/II/2022', '3', '16', 111, 1, 1, '1234567', 1, '123567', 0, 1, 1, 1, '123', '123', 1, 1, 1, 1, 'ygkuhnbjio', '2022-09-05 03:28:19', '2022-09-05 03:28:19', 0, 0);
+INSERT INTO `laporan_detail` (`id_transaksi`, `no_laporan`, `kode_equipment`, `kode_software`, `kode_supplier`, `kode_vendor`, `val_plan`, `urs`, `protokol`, `iq`, `oq`, `pq`, `val_report`, `change_kontrol`, `sop`, `fda21_cprpart11_comly`, `keterangan`, `created_at`, `update_at`, `user_edit`, `user_update`, `url_file_val_plan`, `url_file_urs`, `url_file_protokol`, `url_file_iq`, `url_file_oq`, `url_file_pq`, `url_file_val_report`, `url_file_change_kontrol`, `url_file_sop`, `url_file_fda21_cprpart11_comly`) VALUES
+(1, '1/115/II/2022', '204-TOC-02 ', '116-Test-10', 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 'testtttttttttttttttt', '2022-09-05 01:12:47', '2022-09-05 03:36:16', 0, 0, '', '', '', '', '', '', '', '', '', ''),
+(3, '2/116/III/2022', '204-ICP-01', '116-Test-10', 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 'ADA', '2022-09-08 00:33:22', '2022-09-08 00:33:22', 0, 0, '', '', '', '', '', '', '', '', '', ''),
+(156, '1/115/II/2022', '3', '16', 111, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 'ygkuhnbjio', '2022-09-05 03:28:19', '2022-09-05 03:28:19', 0, 0, '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -302,8 +308,10 @@ CREATE TABLE `laporan_master` (
 --
 
 INSERT INTO `laporan_master` (`no_laporan`, `tanggal_laporan`, `kode_departemen`, `kode_divisi`, `kode_direktorat`, `id_personel`, `created_at`, `update_at`, `user_edit`, `user_update`) VALUES
-('', '0000-00-00 00:00:00', '', '', '', 0, '2022-09-05 07:18:21', '2022-09-05 07:18:21', 0, 0),
+('', '0000-00-00 00:00:00', '', '', '', 0, '2022-09-08 00:44:19', '2022-09-08 00:44:19', 0, 0),
 ('1/115/II/2022', '0000-00-00 00:00:00', '1111', '2100', '3000', 3, '2022-08-31 04:16:04', '2022-08-31 04:16:04', 0, 0),
+('1111', '2022-09-02 00:00:00', '1356', '', '', 1, '2022-09-08 00:35:56', '2022-09-08 00:35:56', 0, 0),
+('2/116/III/2022', '2022-09-08 02:30:27', '2221', '2100', '2000', 3, '2022-09-08 00:31:30', '2022-09-08 00:31:30', 0, 0),
 ('2313', '0000-00-00 00:00:00', '4355', '2300', '3000', 3, '2022-08-31 04:21:10', '2022-08-31 04:21:10', 0, 0),
 ('3rsfe', '2022-08-11 00:00:00', '9898', '3200', '4000', 3, '2022-08-31 04:24:19', '2022-08-31 04:24:19', 0, 0);
 
@@ -383,7 +391,7 @@ CREATE TABLE `software` (
 --
 
 INSERT INTO `software` (`id_software`, `kode_software`, `nama_software`, `tahun`, `kode_vendor`, `jenis_software`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
-(2, '116-Test-10', 'Test software', 0, '1', 'PLC', '2022-08-19 03:06:44', '2022-08-19 03:06:44', 0, 0),
+(2, '116-Test-10', 'Test software', 1990, '1', 'PLC', '2022-08-19 03:06:44', '2022-09-07 08:14:07', 0, 0),
 (3, '116-Test-07', 'Mitsubishi Programmable Controller', 0, '1', 'PLC', '2022-08-24 02:23:08', '2022-08-24 02:23:08', 0, 0);
 
 -- --------------------------------------------------------
@@ -587,19 +595,19 @@ ALTER TABLE `departemen`
 -- AUTO_INCREMENT for table `direktorat`
 --
 ALTER TABLE `direktorat`
-  MODIFY `id_direktorat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_direktorat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `divisi`
 --
 ALTER TABLE `divisi`
-  MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `equipment`
 --
 ALTER TABLE `equipment`
-  MODIFY `id_equipment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_equipment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `gedung`
@@ -647,7 +655,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `vendor`
