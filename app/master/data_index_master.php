@@ -22,8 +22,7 @@
     $hasil = mysqli_query($koneksi, $query);
 
     $queryd = "SELECT laporan_detail.id_transaksi, laporan_master.no_laporan, equipment.kode_equipment, equipment.nama_equipment, software.nama_software, supplier.nama_supplier, vendor.nama_vendor, 
-    laporan_detail.val_plan, laporan_detail.urs_number, laporan_detail.urs, laporan_detail.protokol_number, laporan_detail.protokol, laporan_detail.iq, laporan_detail.oq, laporan_detail.pq, laporan_detail.iq_number,
-    laporan_detail.oq_number, laporan_detail.val_report, laporan_detail.change_kontrol, laporan_detail.sop, laporan_detail.fda21_cprpart11_comly, laporan_detail.keterangan
+    laporan_detail.val_plan, laporan_detail.urs, laporan_detail.protokol, laporan_detail.iq, laporan_detail.oq, laporan_detail.pq, laporan_detail.val_report, laporan_detail.change_kontrol, laporan_detail.sop, laporan_detail.fda21_cprpart11_comly, laporan_detail.keterangan
     FROM laporan_detail
     JOIN laporan_master ON laporan_master.no_laporan=laporan_detail.no_laporan
     JOIN equipment ON equipment.kode_equipment=laporan_detail.kode_equipment

@@ -40,15 +40,11 @@ $kode_software          = $_POST['kode_software'];
 $kode_supplier          = $_POST['kode_supplier'];
 $kode_vendor            = $_POST['kode_vendor'];
 $val_plan               = $_POST['val_plan'];
-$urs_number             = $_POST['urs_number'];
 $urs                    = $_POST['urs'];
-$protokol_number        = $_POST['protokol_number'];
 $protokol               = $_POST['protokol'];
 $iq	                    = $_POST['iq	'];
 $oq                     = $_POST['oq'];
 $pq                     = $_POST['pq'];
-$iq_number              = $_POST['iq_number'];
-$oq_number              = $_POST['oq_number'];
 $val_report             = $_POST['val_report'];
 $change_kontrol         = $_POST['change_kontrol'];
 $sop                    = $_POST['sop'];
@@ -76,8 +72,8 @@ if ($hasil == true) {
 
 
 //Tabel Laporan_detail
-$queryd = "INSERT INTO laporan_detail ( id_transaksi, no_laporan, kode_equipment, kode_software, kode_supplier, kode_vendor, val_plan, urs_number, urs, protokol_number, protokol, iq, oq, pq ,iq_number, oq_number, val_report, change_kontrol, sop, fda21_cprpart11_comly, keterangan
-           VALUES ( '$id_transaksi', '$no_laporan', '$kode_departemen', '$kode_equipment', '$kode_software', '$kode_supplier', '$kode_vendor', '$val_plan', '$urs_number', '$urs', '$protokol_number', '$protokol', '$iq', '$oq', '$pq', '$iq_number', '$oq_number', '$val_report', '$change_kontrol', '$sop', '$fda21_cprpart11_comly', '$keterangan' )";
+$queryd = "INSERT INTO laporan_detail ( id_transaksi, no_laporan, kode_equipment, kode_software, kode_supplier, kode_vendor, val_plan, urs, protokol, iq, oq, pq , val_report, change_kontrol, sop, fda21_cprpart11_comly, keterangan)
+           VALUES ( '$id_transaksi', '$no_laporan', '$kode_equipment', '$kode_software', '$kode_supplier', '$kode_vendor', '$val_plan', '$urs', '$protokol', '$iq', '$oq', '$pq', '$val_report', '$change_kontrol', '$sop', '$fda21_cprpart11_comly', '$keterangan' )";
 
 $hasild = mysqli_query($koneksi, $queryd);
 
