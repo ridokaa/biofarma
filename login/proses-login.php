@@ -15,7 +15,7 @@
         // echo "Login Berhasil";
         // echo $username_user;
         // echo $password_user;
-        header('Location:../app');
+        header('Location:../app/index.php?page=dashboard');
         $user = mysqli_fetch_array($hasil);
         $_SESSION['nama'] = $user['nama_user'];
         $_SESSION['level'] = $user['level_user'];
