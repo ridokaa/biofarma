@@ -52,9 +52,9 @@
 
                             <div class="form-group row">
                                 <label for="val_plan" class="col-sm-2 col-form-label">Val. Plan</label>
-                                <input type="radio" id="val_plan" name="val_plan">
+                                <input type="radio" id="val_plan" name="val_plan" value="1">
                                 <label for="val_plan" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="val_plan" name="val_plan">
+                                <input type="radio" id="val_plan" name="val_plan" value="0">
                                 <label for="val_plan" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -67,9 +67,9 @@
 
                             <div class="form-group row">
                                 <label for="urs" class="col-sm-2 col-form-label">URS</label>
-                                <input type="radio" id="urs" name="urs">
+                                <input type="radio" id="urs" name="urs" value="1">
                                 <label for="urs" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="urs" name="urs">
+                                <input type="radio" id="urs" name="urs" value="0">
                                 <label for="urs" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -82,9 +82,9 @@
 
                             <div class="form-group row">
                                 <label for="protokol" class="col-sm-2 col-form-label">Protokol</label>
-                                <input type="radio" id="protokol" name="protokol">
+                                <input type="radio" id="protokol" name="protokol" value="1">
                                 <label for="protokol" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="protokol" name="protokol">
+                                <input type="radio" id="protokol" name="protokol" value="0">
                                 <label for="protokol" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -97,9 +97,9 @@
 
                             <div class="form-group row">
                                 <label for="iq" class="col-sm-2 col-form-label">IQ</label>
-                                <input type="radio" id="iq" name="iq">
+                                <input type="radio" id="iq" name="iq" value="1">
                                 <label for="iq" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="iq" name="iq">
+                                <input type="radio" id="iq" name="iq" value="0">
                                 <label for="iq" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -112,9 +112,9 @@
 
                             <div class="form-group row">
                                 <label for="oq" class="col-sm-2 col-form-label">OQ</label>
-                                <input type="radio" id="oq" name="oq">
+                                <input type="radio" id="oq" name="oq" value="1">
                                 <label for="oq" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="oq" name="oq">
+                                <input type="radio" id="oq" name="oq" value="0">
                                 <label for="oq" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -127,9 +127,9 @@
 
                             <div class="form-group row">
                                 <label for="pq" class="col-sm-2 col-form-label">PQ</label>
-                                <input type="radio" id="pq" name="pq">
+                                <input type="radio" id="pq" name="pq" value="1">
                                 <label for="pq" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="pq" name="pq">
+                                <input type="radio" id="pq" name="pq" value="0">
                                 <label for="pq" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -142,9 +142,9 @@
 
                             <div class="form-group row">
                                 <label for="val_report" class="col-sm-2 col-form-label">Val. Report</label>
-                                <input type="radio" id="val_report" name="val_report">
+                                <input type="radio" id="val_report" name="val_report" value="1">
                                 <label for="val_report" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="val_report" name="val_report">
+                                <input type="radio" id="val_report" name="val_report" value="0">
                                 <label for="val_report" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -157,9 +157,9 @@
 
                             <div class="form-group row">
                                 <label for="change_kontrol" class="col-sm-2 col-form-label">Change kontrol</label>
-                                <input type="radio" id="change_kontrol" name="change_kontrol">
+                                <input type="radio" id="change_kontrol" name="change_kontrol" value="1">
                                 <label for="change_kontrol" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="change_kontrol" name="change_kontrol">
+                                <input type="radio" id="change_kontrol" name="change_kontrol" value="0">
                                 <label for="change_kontrol" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -172,9 +172,9 @@
 
                             <div class="form-group row">
                                 <label for="sop" class="col-sm-2 col-form-label">SOP</label>
-                                <input type="radio" id="sop" name="sop">
+                                <input type="radio" id="sop" name="sop" value="1">
                                 <label for="sop" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="sop" name="sop">
+                                <input type="radio" id="sop" name="sop" value="0">
                                 <label for="sop" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">
@@ -187,9 +187,9 @@
 
                             <div class="form-group row">
                                 <label for="fda21_cprpart11_comly" class="col-sm-2 col-form-label">FDA CFR Part 11 Comply</label>
-                                <input type="radio" id="fda21_cprpart11_comly" name="fda21_cprpart11_comly">
+                                <input type="radio" id="fda21_cprpart11_comly" name="fda21_cprpart11_comly" value="1">
                                 <label for="fda21_cprpart11_comly" class="col-sm-2 col-form-label">Ada</label>
-                                <input type="radio" id="fda21_cprpart11_comly" name="fda21_cprpart11_comly">
+                                <input type="radio" id="fda21_cprpart11_comly" name="fda21_cprpart11_comly" value="0">
                                 <label for="fda21_cprpart11_comly" class="col-sm-2 col-form-label">Tidak Ada</label>
                             
                                 <div class="form-group row">

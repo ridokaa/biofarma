@@ -3,6 +3,7 @@
 <?php
 include('data_index_master.php');
 isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
+$departemen = $_SESSION["departemen"];
 
 ?>
 
@@ -113,11 +114,15 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
 
                     </div>
                 </div>
-                <div class="text-right">
-                    <button type="submit" class="btn btn-info">
-                        <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
-                    </button>
-                </div>
+                <?php if($departemen == 'campak'){ ?>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-info">
+                            <i class="nav-icon  fas  fa-plus ml-2"></i>Tambah Data
+                        </button>
+                    </div>
+                <?php } else { ?>
+                    <p>tes</p>
+                <?php } ?>
 
             </form>
         </div>
@@ -134,7 +139,10 @@ isset($_GET['no_laporan']) ? $no_laporan_existing = $_GET['no_laporan']: null;
     </div>
     <br></br>
     <div class="text-right">
-        <a href="index.php?page=detail_tambah&& id_transaksi"><button class="btn btn-info"><i class="nav-icon  fas   fa-plus-square "></i>Tambah Data</a></button>
+    <?php
+            echo(isset($no_laporan_existing) ? '<a href="index.php?page=detail_tambah&& id_transaksi&no_laporan='. $no_laporan_existing .'" class="btn btn-info "><i class="nav-icon  fas   fa-plus-square "></i>Tambah Data</a>': '<button class="btn btn-info" disabled><i class="nav-icon  fas   fa-plus-square "></i>Tambah Data</button>');
+             ?>
+        
     </div>
     <div class="d-flex justify-content-end border p-2 mt-3">
         <h5 for="tanggal_laporan" class="my-3 font-weight-bold">No Laporan: </h5>

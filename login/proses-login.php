@@ -15,10 +15,15 @@
         // echo "Login Berhasil";
         // echo $username_user;
         // echo $password_user;
-        header('Location:../app/index.php?page=dashboard');
         $user = mysqli_fetch_array($hasil);
+        $query_user_departemen = "SELECT * FROM user JOIN departemen ON user.kode_departemen=departemen.kode_departemen AND user.id_user= $user[id_user]";
+        $hasildepartemen = mysqli_query($koneksi, $query_user_departemen);
+        $user_departemen = mysqli_fetch_array($hasildepartemen);
+        $_SESSION["role_access"] = "Super Admin";
         $_SESSION['nama'] = $user['nama_user'];
         $_SESSION['level'] = $user['level_user'];
+        $_SESSION['departemen'] = $user_departemen['nama_departemen'];
+        header('Location:../app/index.php?page=dashboard');
     }
     else if($username_user== '' || $password_user== ''){
         header('Location:..//index.php?error=2');

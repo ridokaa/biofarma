@@ -53,6 +53,7 @@ $keterangan             = $_POST['keterangan'];
 
 
 
+
 // // masukkan ke database Tabel laporan_master
 $query = "INSERT INTO laporan_master ( no_laporan, tanggal_laporan, kode_departemen, kode_divisi, kode_direktorat, id_personel)    
           VALUES ('$no_laporan', '$tanggal_laporan', '$kode_departemen', '$kode_divisi','$kode_direktorat','$id_personel')";
@@ -89,180 +90,192 @@ if($hasild == true) {
 
 // FILE UPLOAD VAL PLAN
 // ambil data file
-$namaFile = $_FILES['file-val_plan']['name'];
-$namaSementara = $_FILES['file-val_plan']['tmp_name'];
+$namaFileVal_plan = $_FILES['file-val_plan']['name'];
+$namaSementaraVal_plan = $_FILES['file-val_plan']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/val_plan/";
+$url_file_val_plan= "/uploads/val_plan/".$namaFileVal_plan;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementaraVal_plan, $dirUpload.$namaFileVal_plan);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFileVal_plan."'>".$namaFileVal_plan."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD URS
 // ambil data file
-$namaFile = $_FILES['file-urs']['name'];
-$namaSementara = $_FILES['file-urs']['tmp_name'];
+$namaFileUrs = $_FILES['file-urs']['name'];
+$namaSementaraUrs = $_FILES['file-urs']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/urs/";
+$url_file_urs= "/uploads/urs/".$namaFileUrs;
+// var_dump($url_file_urs);
+// die();
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementaraUrs, $dirUpload.$namaFileUrs);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFileUrs."'>".$namaFileUrs."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD PROTOKOL
 // ambil data file
-$namaFile = $_FILES['file-protokol']['name'];
-$namaSementara = $_FILES['file-protokol']['tmp_name'];
+$namaFileProtokol = $_FILES['file-protokol']['name'];
+$namaSementaraProtokol = $_FILES['file-protokol']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/protokol/";
+$url_file_protokol= "/uploads/urs/".$namaFileProtokol;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementaraProtokol, $dirUpload.$namaFileProtokol);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFileProtokol."'>".$namaFileProtokol."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD IQ
 // ambil data file
-$namaFile = $_FILES['file-iq']['name'];
-$namaSementara = $_FILES['file-iq']['tmp_name'];
+$namaFileiq = $_FILES['file-iq']['name'];
+$namaSementaraiq = $_FILES['file-iq']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/iq/";
+$url_file_iq= "/uploads/iq/".$namaFileiq;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementaraiq, $dirUpload.$namaFileiq);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFileiq."'>".$namaFileiq."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD OQ
 // ambil data file
-$namaFile = $_FILES['file-oq']['name'];
-$namaSementara = $_FILES['file-oq']['tmp_name'];
+$namaFileoq = $_FILES['file-oq']['name'];
+$namaSementaraoq = $_FILES['file-oq']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/oq/";
+$url_file_oq= "/uploads/oq/".$namaFileoq;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementaraoq, $dirUpload.$namaFileoq);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFileoq."'>".$namaFileoq."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD PQ
 // ambil data file
-$namaFile = $_FILES['file-pq']['name'];
-$namaSementara = $_FILES['file-pq']['tmp_name'];
+$namaFilepq = $_FILES['file-pq']['name'];
+$namaSementarapq = $_FILES['file-pq']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/pq/";
+$url_file_pq= "/uploads/pq/".$namaFilepq;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementarapq, $dirUpload.$namaFilepq);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFilepq."'>".$namaFilepq."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD VAL REPORT
 // ambil data file
-$namaFile = $_FILES['file-val_report']['name'];
-$namaSementara = $_FILES['file-val_report']['tmp_name'];
+$namaFileVal_report = $_FILES['file-val_report']['name'];
+$namaSementaraVal_report = $_FILES['file-val_report']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/val_report/";
+$url_file_val_report= "/uploads/val_report/".$namaFileVal_report;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementaraVal_report, $dirUpload.$namaFileVal_report);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFileVal_report."'>".$namaFileVal_report."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD SOP
 // ambil data file
-$namaFile = $_FILES['file-sop']['name'];
-$namaSementara = $_FILES['file-sop']['tmp_name'];
+$namaFilesop = $_FILES['file-sop']['name'];
+$namaSementarasop = $_FILES['file-sop']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/sop/";
+$url_file_sop= "/uploads/sop/".$namaFilesop;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementarasop, $dirUpload.$namaFilesop);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFilesop."'>".$namaFilesop."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD CHANGE KONTROL
 // ambil data file
-$namaFile = $_FILES['file-change_kontrol']['name'];
-$namaSementara = $_FILES['file-change_kontrol']['tmp_name'];
+$namaFileChange_kontrol = $_FILES['file-change_kontrol']['name'];
+$namaSementaraChange_kontrol = $_FILES['file-change_kontrol']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/change_kontrol/";
+$url_file_change_kontrol= "/uploads/change_kontrol/".$namaFileChange_kontrol;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementaraChange_kontrol, $dirUpload.$namaFileChange_kontrol);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFileChange_kontrol."'>".$namaFileChange_kontrol."</a>";
 } else {
     echo "Upload Gagal!";
 }
 
 // FILE UPLOAD FDA CFR Part 11 Comply
 // ambil data file
-$namaFile = $_FILES['file-fda21_cprpart11_comly']['name'];
-$namaSementara = $_FILES['file-fda21_cprpart11_comly']['tmp_name'];
+$namaFilefda21_cprpart11_comly = $_FILES['file-fda21_cprpart11_comly']['name'];
+$namaSementarafda21_cprpart11_comly = $_FILES['file-fda21_cprpart11_comly']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
 $dirUpload = "../../uploads/fda21_cprpart11_comly/";
+$url_file_fda21_cprpart11_comly= "/uploads/fda21_cprpart11_comly/".$namaFilefda21_cprpart11_comly;
 
 // pindahkan file
-$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload = move_uploaded_file($namaSementarafda21_cprpart11_comly, $dirUpload.$namaFilefda21_cprpart11_comly);
 
 if ($terupload) {
     echo "Upload berhasil!<br/>";
-    echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
+    echo "Link: <a href='".$dirUpload.$namaFilefda21_cprpart11_comly."'>".$namaFilefda21_cprpart11_comly."</a>";
 } else {
     echo "Upload Gagal!";
 }
