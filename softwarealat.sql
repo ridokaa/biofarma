@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2022 at 03:02 AM
+-- Generation Time: Sep 14, 2022 at 08:25 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -151,7 +151,9 @@ CREATE TABLE `equipment` (
 --
 
 INSERT INTO `equipment` (`id_equipment`, `kode_equipment`, `nama_equipment`, `kode_software`, `kode_departemen`, `id_ruangan`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
-(4, '204-ICP-01  ', 'Analisa Logam', '116-Test-10', '5434', 2, '2022-08-24 02:12:49', '2022-08-29 03:20:15', 0, 0);
+(4, '204-ICP-01  ', 'Analisa Logam', '116-Test-10', '5434', 2, '2022-08-24 02:12:49', '2022-08-29 03:20:15', 0, 0),
+(6, '204-ICP-01  ', 'ICP', '116-Test-07', '8892', 2, '2022-09-13 02:12:05', '2022-09-13 02:12:05', 0, 0),
+(7, '201-TOC-02 ', 'TOC 2', '116-Test-06', '2221', 2, '2022-09-13 02:12:56', '2022-09-13 02:12:56', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -280,8 +282,10 @@ CREATE TABLE `laporan_detail` (
 --
 
 INSERT INTO `laporan_detail` (`id_transaksi`, `no_laporan`, `kode_equipment`, `kode_software`, `kode_supplier`, `kode_vendor`, `val_plan`, `urs`, `protokol`, `iq`, `oq`, `pq`, `val_report`, `change_kontrol`, `sop`, `fda21_cprpart11_comly`, `keterangan`, `created_at`, `update_at`, `user_edit`, `user_update`, `url_file_val_plan`, `url_file_urs`, `url_file_protokol`, `url_file_iq`, `url_file_oq`, `url_file_pq`, `url_file_val_report`, `url_file_change_kontrol`, `url_file_sop`, `url_file_fda21_cprpart11_comly`) VALUES
+(0, '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '2022-09-13 02:38:08', '2022-09-13 02:38:08', 0, 0, '', '', '', '', '', '', '', '', '', ''),
 (1, '1/115/II/2022', '204-TOC-02 ', '116-Test-10', 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 'testtttttttttttttttt', '2022-09-05 01:12:47', '2022-09-05 03:36:16', 0, 0, '', '', '', '', '', '', '', '', '', ''),
 (3, '2/116/III/2022', '204-ICP-01', '116-Test-10', 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 'ADA', '2022-09-08 00:33:22', '2022-09-08 00:33:22', 0, 0, '', '', '', '', '', '', '', '', '', ''),
+(10, '2/116/III/2022', '204-TOC-02 ', '116-Test-10', 2, 4, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 'ASD', '2022-09-13 02:15:44', '2022-09-13 02:18:23', 0, 0, '', '', '', '', '', '', '', '', '', ''),
 (156, '1/115/II/2022', '3', '16', 111, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 'ygkuhnbjio', '2022-09-05 03:28:19', '2022-09-05 03:28:19', 0, 0, '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
@@ -391,8 +395,9 @@ CREATE TABLE `software` (
 --
 
 INSERT INTO `software` (`id_software`, `kode_software`, `nama_software`, `tahun`, `kode_vendor`, `jenis_software`, `created_at`, `updated_at`, `user_update`, `user_edit`) VALUES
-(2, '116-Test-10', 'Test software', 1990, '1', 'PLC', '2022-08-19 03:06:44', '2022-09-07 08:14:07', 0, 0),
-(3, '116-Test-07', 'Mitsubishi Programmable Controller', 0, '1', 'PLC', '2022-08-24 02:23:08', '2022-08-24 02:23:08', 0, 0);
+(2, '116-Test-10', 'Test Software A', 1990, '1', 'PLC', '2022-08-19 03:06:44', '2022-09-13 02:11:31', 0, 0),
+(3, '116-Test-07', 'Mitsubishi Programmable Controller', 2002, '1', 'PLC', '2022-08-24 02:23:08', '2022-09-13 02:05:36', 0, 0),
+(4, '116-Test-06', 'Test software', 2000, '2', 'PLC', '2022-09-13 02:05:26', '2022-09-13 02:05:26', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -445,14 +450,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `username_user`, `password_user`, `keterangan_user`, `level_user`, `kode_departemen`, `created_at`, `updated_at`) VALUES
-(1, 'Miftah Afina', 'miftahafina', '2e5b97a8a84739fecea891201a74bd7e', 'afin123', 'Super Admin', '000', '2022-07-25 08:20:19', '2022-07-25 08:20:19'),
-(8, 'Amin B. Kanda', 'Amin', 'fae38bd94701cdf2a9d114425cb40292', 'pass: ayu123', 'Admin User', '000', '2022-07-25 08:20:10', '2022-07-25 08:20:10'),
-(9, 'Hilman Pebrian', 'hilman ', '202cb962ac59075b964b07152d234b70', 'pass: 123', 'Super Admin', '115', '2022-07-25 08:20:03', '2022-07-25 08:20:03'),
-(10, 'Fitri Adini', 'fitri', '202cb962ac59075b964b07152d234b70', 'pas 123', 'Operator', '114', '2022-07-17 05:53:19', '2022-07-17 05:53:19'),
-(13, 'Amin1', 'Amin1', '202cb962ac59075b964b07152d234b70', '123', 'Admin User', '237', '2022-07-25 08:20:27', '2022-07-25 08:20:27'),
-(15, 'Abigail', 'bigeyl', '81dc9bdb52d04dc20036dbd8313ed055', 'pass', 'Super Admin', '5434', '2022-08-11 00:44:07', '2022-08-15 00:27:12'),
-(17, 'San Jaegar', 'jaexxy', '202cb962ac59075b964b07152d234b70', 'sfdfsdffdgg', 'Super Admin', '9898', '2022-08-11 00:47:51', '2022-08-15 00:27:33'),
-(18, 'bnmio', 'umnbyug', '7363a0d0604902af7b70b271a0b96480', 'pass', 'Super Admin', '4235', '2022-08-11 00:45:05', '2022-08-11 00:50:42');
+(1, 'Miftah Afina', 'miftahafina', '2e5b97a8a84739fecea891201a74bd7e', 'afin123', 'Super Admin', '2221', '2022-07-25 08:20:19', '2022-09-12 01:47:31'),
+(8, 'Amin B. Kanda', 'Amin', 'fae38bd94701cdf2a9d114425cb40292', 'pass: ayu123', 'Admin User', '1356', '2022-07-25 08:20:10', '2022-09-12 01:47:24'),
+(9, 'Hilman Pebrian', 'hilman ', '202cb962ac59075b964b07152d234b70', 'pass: 123', 'Super Admin', '7564', '2022-07-25 08:20:03', '2022-09-12 01:32:37'),
+(10, 'Fitri Adini', 'fitri', '202cb962ac59075b964b07152d234b70', 'pas 123', 'Operator', '5321', '2022-07-17 05:53:19', '2022-09-12 01:47:14'),
+(13, 'Amin1', 'Amin1', '202cb962ac59075b964b07152d234b70', '123', 'Admin User', '8892', '2022-07-25 08:20:27', '2022-09-12 01:47:01'),
+(15, 'Abigail', 'bigeyl', '81dc9bdb52d04dc20036dbd8313ed055', 'pass', 'Super Admin', '5321', '2022-08-11 00:44:07', '2022-09-12 01:47:49'),
+(17, 'San Jaegar', 'jaexxy', '202cb962ac59075b964b07152d234b70', 'sfdfsdffdgg', 'Super Admin', '2221', '2022-08-11 00:47:51', '2022-09-12 01:47:57'),
+(18, 'bnmio', 'umnbyug', '7363a0d0604902af7b70b271a0b96480', 'pass', 'Super Admin', '7564', '2022-08-11 00:45:05', '2022-09-12 01:48:04');
 
 -- --------------------------------------------------------
 
@@ -607,7 +612,7 @@ ALTER TABLE `divisi`
 -- AUTO_INCREMENT for table `equipment`
 --
 ALTER TABLE `equipment`
-  MODIFY `id_equipment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_equipment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `gedung`
@@ -643,7 +648,7 @@ ALTER TABLE `ruangan`
 -- AUTO_INCREMENT for table `software`
 --
 ALTER TABLE `software`
-  MODIFY `id_software` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_software` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `supplier`
