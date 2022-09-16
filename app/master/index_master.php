@@ -62,7 +62,7 @@ $departemen = $_SESSION["departemen"];
                                     divisi.kode_direktorat = direktorat.kode_direktorat");
 
                                     $a = "var kodeDivisi = new Array();\n;";
-                                    $b = "var kodeDepartemen = new Array();\n;";
+                                    $b = "var kodeDirektorat = new Array();\n;";
 
                                     while ($row = mysqli_fetch_array($result)) {
                                         echo '<option name="kode_departemen" value="' . $row['kode_departemen'] . '">' . $row['nama_departemen'] . '</option>';
@@ -71,7 +71,7 @@ $departemen = $_SESSION["departemen"];
                                             nama_divisi :'" . addslashes($row['nama_divisi']) . "',
                                         };\n";
 
-                                        $b .= "kodeDepartemen['" . $row['kode_departemen'] . "'] = {
+                                        $b .= "kodeDirektorat['" . $row['kode_departemen'] . "'] = {
                                             nama_direktorat :'" . addslashes($row['nama_direktorat']) . "',
                                         };\n";
                                     }
@@ -133,11 +133,11 @@ $departemen = $_SESSION["departemen"];
                                 if (id != 0) {
 
                                     var kd = kodeDivisi[id];
-                                    var kdp = kodeDepartemen[id];
+                                    var kdp = kodeDirektorat[id];
 
                                     console.log("id", id);
                                     // console.log(kodeDivisi);
-                                    // console.log(kodeDepartemen);
+                                    // console.log(kodeDirektorat);
 
                                     console.log(kd.nama_divisi); // hanya untuk pengetesan
                                     console.log(kdp.nama_direktorat); // hanya untuk pengetesan
