@@ -25,8 +25,8 @@ $departemen = $_SESSION["departemen"];
                         <!-- <div class="form-group row">
                                         <label for="no_laporan" class="col-sm-2 col-form-label">No Laporan</label>
                                         <div class="col-sm-10">
-                                        <?php echo $user['no_laporan']; ?>
-                                        <?php var_dump($user); ?>
+                                        <?php //echo $user['no_laporan']; ?>
+                                        <?php //var_dump($user); ?>
                                         </div>
                                     </div> -->
 
@@ -43,20 +43,42 @@ $departemen = $_SESSION["departemen"];
                                 <?php   
                                     $con = mysqli_connect("localhost","root","","softwarealat");  
                                 ?>
-                                    <select class="form-control selectpicker" id="kode_departemen" name="kode_departemen" onchange='changeValue(this.value)' required>
-                                        <option value="">-Pilih Departemen-</option>
-                                            <?php   
-                                                    $query = mysqli_query($con, "SELECT * FROM departemen ORDER BY kode_departemen esc");  
-                                                    $result = mysqli_query($con, "SELECT kode_departemen, nama_departemen, divisi.nama_divisi, direktorat.nama_direktorat FROM departemen, divisi, direktorat WHERE departemen.kode_divisi=divisi.kode_divisi AND divisi.kode_direktorat=direktorat.kode_direktorat");  
-                                                    $a          = "var kode_divisi = new Array();\n;";    
-                                                    while ($row = mysqli_fetch_array($result)) {  
-                                                        echo '<option name="kode_departemen" value="'.$row['kode_departemen'] . '">' . $row['nama_departemen'] . '</option>';   
-                                                        $a .= "kode_divisi['" . $row['kode_departemen'] . "'] = {kode_divisi:'" . addslashes($row['kode_divisi'])."'};\n";  
-                                                    }  
-                                            ?>
-                                    </select>
-                             </div>
-                                    
+                                <select class="form-control selectpicker" id="kode_departemen" name="kode_departemen" onchange='changeValue(this.value)' required>
+                                    <option value="0">-Pilih Departemen-</option>
+                                    <?php
+                                    $query = mysqli_query($con, "SELECT * FROM departemen ORDER BY kode_departemen ASC");
+                                    $result = mysqli_query($con, "SELECT
+                                    kode_departemen,
+                                    nama_departemen,
+                                    divisi.nama_divisi,
+                                    direktorat.nama_direktorat
+                                    FROM
+                                    departemen,
+                                    divisi,
+                                    direktorat
+                                    WHERE
+                                    departemen.kode_divisi = divisi.kode_divisi
+                                    AND
+                                    divisi.kode_direktorat = direktorat.kode_direktorat");
+
+                                    $a = "var kodeDivisi = new Array();\n;";
+                                    $b = "var kodeDepartemen = new Array();\n;";
+
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo '<option name="kode_departemen" value="' . $row['kode_departemen'] . '">' . $row['nama_departemen'] . '</option>';
+
+                                        $a .= "kodeDivisi['" . $row['kode_departemen'] . "'] = {
+                                            nama_divisi :'" . addslashes($row['nama_divisi']) . "',
+                                        };\n";
+
+                                        $b .= "kodeDepartemen['" . $row['kode_departemen'] . "'] = {
+                                            nama_direktorat :'" . addslashes($row['nama_direktorat']) . "',
+                                        };\n";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
                         </div>
 
                                     <div class="form-group row">
@@ -103,14 +125,31 @@ $departemen = $_SESSION["departemen"];
                             </div>
                         </div>
 
-                        <script type="text/javascript">   
-                            <?php   
-                             echo $a;   ?>  
-                             function changeValue(id){  
-                                console.log("id", id)
-                            document.getElementById('kode_divisi').value = kode_divisi[id].kode_divisi; 
-                          };  
-                          </script>
+                        <script type="text/javascript">
+                            <?php echo $a;   ?>
+                            <?php echo $b;   ?>
+
+                            function changeValue(id) {
+                                if (id != 0) {
+
+                                    var kd = kodeDivisi[id];
+                                    var kdp = kodeDepartemen[id];
+
+                                    console.log("id", id);
+                                    // console.log(kodeDivisi);
+                                    // console.log(kodeDepartemen);
+
+                                    console.log(kd.nama_divisi); // hanya untuk pengetesan
+                                    console.log(kdp.nama_direktorat); // hanya untuk pengetesan
+
+                                    document.getElementById('kode_divisi').value = kd.nama_divisi;
+                                    document.getElementById('kode_direktorat').value = kdp.nama_direktorat;
+                                } else {
+                                    document.getElementById('kode_divisi').value = '';
+                                    document.getElementById('kode_direktorat').value = '';
+                                }
+                            };
+                        </script>
 
                     </div>
                 </div>
