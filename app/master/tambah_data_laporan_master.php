@@ -22,6 +22,9 @@ $database   = "softwarealat";
 
 $koneksi = mysqli_connect($host, $user, $pass, $database) or die("gagal koneksi ke database");
 
+// var_dump($_POST);
+// die();
+
 
 // ambil data dari form Tabel laporan_master
 $no_laporan             = $_POST['no_laporan'];
@@ -53,23 +56,26 @@ $keterangan             = $_POST['keterangan'];
 
 
 
+if(isset($no_laporan)){
 
-// // masukkan ke database Tabel laporan_master
-$query = "INSERT INTO laporan_master ( no_laporan, tanggal_laporan, kode_departemen, kode_divisi, kode_direktorat, id_personel)    
-          VALUES ('$no_laporan', '$tanggal_laporan', '$kode_departemen', '$kode_divisi','$kode_direktorat','$id_personel')";
-// var_dump($query);
-$hasil = mysqli_query($koneksi, $query);
-
-// var_dump(mysqli_affected_rows($koneksi));
-
-//cek keberhasilan pendambahan data
-if ($hasil == true) {
-    echo "Penambahan data berhasil";
-    header('location:../index.php?page=master&no_laporan=' . $no_laporan);
-} else {
-    echo "Penambahan data gagal!" . mysqli_connect_error($koneksi);
-    header('location:../index.php?page=master');
+    // // masukkan ke database Tabel laporan_master
+    $query = "INSERT INTO laporan_master ( no_laporan, tanggal_laporan, kode_departemen, kode_divisi, kode_direktorat, id_personel)    
+              VALUES ('$no_laporan', '$tanggal_laporan', '$kode_departemen', '$kode_divisi','$kode_direktorat','$id_personel')";
+    // var_dump($query);
+    $hasil = mysqli_query($koneksi, $query);
+    
+    // var_dump(mysqli_affected_rows($koneksi));
+    
+    //cek keberhasilan pendambahan data
+    if ($hasil == true) {
+        echo "Penambahan data berhasil";
+        header('location:../index.php?page=master&no_laporan=' . $no_laporan);
+    } else {
+        echo "Penambahan data gagal!" . mysqli_connect_error($koneksi);
+        header('location:../index.php?page=master');
+    }
 }
+
 
 
 //Tabel Laporan_detail
@@ -78,13 +84,13 @@ $queryd = "INSERT INTO laporan_detail ( id_transaksi, no_laporan, kode_equipment
 
 $hasild = mysqli_query($koneksi, $queryd);
 
-if($hasild == true) {
-    echo "Penambahan data berhasil";
-    header('location:../index.php?page=master');
-} else {
-    echo "Penambahan data gagal!" . mysqli_connect_error($koneksi);
-    header('location:../index.php?page=master');
-}
+// if($hasild == true) {
+//     echo "Penambahan data berhasil";
+//     header('location:../index.php?page=master');
+// } else {
+//     echo "Penambahan data gagal!" . mysqli_connect_error($koneksi);
+//     header('location:../index.php?page=master');
+// }
 
 
 
@@ -171,7 +177,7 @@ if ($terupload) {
 $namaFileoq = $_FILES['file-oq']['name'];
 $namaSementaraoq = $_FILES['file-oq']['tmp_name'];
 
-// tentukan lokasi file akan dipindahkan
+// tentukan lokasi file akan dipindahkanbb   
 $dirUpload = "../../uploads/oq/";
 $url_file_oq= "/uploads/oq/".$namaFileoq;
 

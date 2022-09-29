@@ -31,22 +31,22 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="nama_software" class="col-sm-2 col-form-label">Software</label>
+                                <label for="nama_software" class="col-sm-2 col-form-label">Nama Software</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="nama_software" placeholder="software" name="nama_software" >
+                                    <input type="text" class="form-control" id="nama_software" placeholder=" nama software" name="nama_software" >
                                 </div>
                             </div>
                               <div class="form-group row">
-                                <label for="nama_supplier" class="col-sm-2 col-form-label">Supplier</label>
+                                <label for="nama_supplier" class="col-sm-2 col-form-label">Nama Supplier</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="nama_supplier" placeholder="supplier" name="nama_supplier">
+                                    <input type="text" class="form-control" id="nama_supplier" placeholder=" nama supplier" name="nama_supplier">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="nama_vendor" class="col-sm-2 col-form-label">Vendor</label>
+                                <label for="nama_vendor" class="col-sm-2 col-form-label">Nama Vendor</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="nama_vendor" placeholder="vendor" name="nama_vendor">
+                                    <input type="text" class="form-control" id="nama_vendor" placeholder=" nama vendor" name="nama_vendor">
                                 </div>
                             </div>
 
